@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experience – Arshdeep Singh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* base styles similar to projects.html */
+    :root {
+      --bg: #060810;
+      --bg-alt: #0b0f1a;
+      --card: #111726;
+      --accent: #4f46e5;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --chip: #111827;
+      --radius-lg: 18px;
+      --max-width: 1100px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%);
+      color: var(--text);
+      line-height:1.6;
+    }
+    a { color:inherit; text-decoration:none; }
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    header {
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      gap:16px; margin-bottom:24px;
+    }
+    .logo { font-weight:600; letter-spacing:0.06em; font-size:13px; text-transform:uppercase; color:var(--muted); }
+    nav { display:flex; gap:16px; font-size:13px; color:var(--muted); }
+    nav a { padding:4px 8px; border-radius:999px; }
+    nav a:hover { background:rgba(148,163,184,0.12); color:#e5e7eb; }
+    .cta-link { border-radius:999px; padding:6px 12px; border:1px solid rgba(148,163,184,0.4); font-size:12px; }
+    .page-title { font-size:22px; font-weight:650; margin-bottom:4px; }
+    .page-subtitle { font-size:13px; color:var(--muted); margin-bottom:16px; max-width:620px; }
+    .layout-2col { display:grid; grid-template-columns: minmax(0,1.1fr) minmax(0,2fr); gap:16px; }
+    .list-box { background:var(--bg-alt); border-radius:var(--radius-lg); border:1px solid var(--border); padding:12px; }
+    .list-title { font-size:13px; font-weight:600; margin-bottom:8px; }
+    .role-list { display:flex; flex-direction:column; gap:4px; }
+    .role-item {
+      border-radius:10px; padding:6px 8px; font-size:12px; cursor:pointer;
+      display:flex; flex-direction:column;
+      color:var(--muted);
+    }
+    .role-item .label { font-weight:500; color:#e5e7eb; }
+    .role-item .meta { font-size:11px; }
+    .role-item.active {
+      background:rgba(79,70,229,0.18);
+      border:1px solid rgba(129,140,248,0.8);
+      color:#e5e7eb;
+    }
+    .detail-box { background:var(--card); border-radius:var(--radius-lg); border:1px solid var(--border); padding:14px; }
+    .role-detail { display:none; font-size:13px; }
+    .role-detail.active { display:block; }
+    .detail-title { font-size:15px; font-weight:600; margin-bottom:4px; }
+    .detail-meta { font-size:12px; color:var(--muted); margin-bottom:10px; }
+    .detail-body p { margin-bottom:6px; }
+    @media (max-width:800px){ .layout-2col{ grid-template-columns:1fr; } }
+    @media (max-width:600px){ nav{display:none;} main{padding:18px 14px 48px;} }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo"><a href="index.html">Arshdeep Singh</a></div>
+      <nav>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
+    </header>
+
+    <h1 class="page-title">Experience</h1>
+    <p class="page-subtitle">
+      Roles and initiatives where I’ve applied market research, modelling, strategy and communication in real teams.
+      Click a role on the left to see more details.
+    </p>
+
+    <div class="layout-2col">
+      <aside class="list-box">
+        <div class="list-title">Roles</div>
+        <div class="role-list">
+          <div class="role-item active" data-target="freelance">
+            <span class="label">Freelance Consultant</span>
+            <span class="meta">Market Research, Strategy & Digital Marketing · 2025–</span>
+          </div>
+          <div class="role-item" data-target="reiser">
+            <span class="label">Working Student – Market Intelligence</span>
+            <span class="meta">Reiser Simulation & Training · 2023–2024</span>
+          </div>
+          <div class="role-item" data-target="amius">
+            <span class="label">Research Assistant – AMIUS</span>
+            <span class="meta">TUM Chair of Traffic Engineering · 2024</span>
+          </div>
+          <div class="role-item" data-target="qd">
+            <span class="label">Project Study – Quantum Diamonds</span>
+            <span class="meta">Market research & GTM · 2023</span>
+          </div>
+          <div class="role-item" data-target="delta">
+            <span class="label">Research – Delta Orbit</span>
+            <span class="meta">Space market analysis · 2023</span>
+          </div>
+          <div class="role-item" data-target="horyzn">
+            <span class="label">Business Dev & Marketing – HORYZN</span>
+            <span class="meta">UAV & eVTOL initiative · 2022–2024</span>
+          </div>
+          <div class="role-item" data-target="aam">
+            <span class="label">AAM Scholar – AAM Institute</span>
+            <span class="meta">Research Council · Global</span>
+          </div>
+          <div class="role-item" data-target="sonalika">
+            <span class="label">Industrial Training – Sonalika Tractors</span>
+            <span class="meta">Manufacturing · India</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="detail-box">
+        <article class="role-detail active" id="detail-freelance">
+          <h2 class="detail-title">Freelance Consultant – Market Research, Strategy & Digital Marketing</h2>
+          <div class="detail-meta">Self-employed · 2025– · Munich / Remote</div>
+          <div class="detail-body">
+            <p>
+              Supporting founders, product teams and initiatives with market validation, business case modelling,
+              go-to-market concepts and digital communication around complex products.
+            </p>
+            <p>
+              Typically engaged on short, focused projects (2–8 weeks) with clear deliverables such as a market
+              report, business case model or go-to-market deck.
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-reiser">
+          <h2 class="detail-title">Working Student – Market Intelligence</h2>
+          <div class="detail-meta">Reiser Simulation & Training · 2023–2024 · Gilching, Germany</div>
+          <div class="detail-body">
+            <p>
+              Built market studies and business cases for training and simulation products with a focus on business
+              aviation and maintenance training.
+            </p>
+            <p>
+              Combined fleet data, regulatory frameworks and training concepts to support product and investment decisions,
+              including the AFT business case, business jet segment analysis and maintenance training market mapping.
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-amius">
+          <h2 class="detail-title">Research Assistant – AMIUS Project</h2>
+          <div class="detail-meta">TUM Chair of Traffic Engineering · 2024 · Munich, Germany</div>
+          <div class="detail-body">
+            <p>
+              Worked on the AMIUS project to integrate unmanned airspace (U-Space) and urban air mobility services into
+              traffic simulations for Bavaria.
+            </p>
+            <p>
+              Helped configure scenarios, interpret KPIs such as delay time and traffic flow and translate results into
+              infrastructure and policy insights.
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-qd">
+          <h2 class="detail-title">Project Study – Quantum Diamonds</h2>
+          <div class="detail-meta">Market research & go-to-market strategy · 2023</div>
+          <div class="detail-body">
+            <p>
+              Evaluated quantum sensor applications across multiple sectors (semiconductor, energy, healthcare and more)
+              using structured feasibility and value filters.
+            </p>
+            <p>
+              Developed customer personas, a lean business model canvas and a go-to-market roadmap for one priority
+              segment, contributing to investor-facing material.
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-delta">
+          <h2 class="detail-title">Research – Delta Orbit</h2>
+          <div class="detail-meta">Space market analysis · 2023</div>
+          <div class="detail-body">
+            <p>
+              Conducted market research and technology benchmarking for in-orbit refuelling, in-space propulsion engines
+              and lunar transfer vehicles.
+            </p>
+            <p>
+              Produced written reports and structured comparisons to support the company’s understanding of future space
+              logistics opportunities.
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-horyzn">
+          <h2 class="detail-title">Business Development & Marketing – HORYZN</h2>
+          <div class="detail-meta">UAV & eVTOL Initiative · TUM · 2022–2024</div>
+          <div class="detail-body">
+            <p>
+              Supported the HORYZN initiative with partnership outreach, sponsorship proposals and event management for
+              UAV and eVTOL technology projects.
+            </p>
+            <p>
+              Contributed to content creation and social media presence to engage industry partners, students and the wider community.
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-aam">
+          <h2 class="detail-title">AAM Scholar – Advanced Air Mobility Institute</h2>
+          <div class="detail-meta">AAM Scholars Program · Research Council · Global</div>
+          <div class="detail-body">
+            <p>
+              Selected as an AAM Scholar within the Advanced Air Mobility Institute’s Research Council, contributing a
+              perspective focused on AAM market research and commercialisation.
+            </p>
+            <p>
+              Featured on the official team page among international scholars and experts and engaged with a
+              multidisciplinary community around future air mobility.
+            </p>
+            <p>
+              <a href="https://aaminstitute.org/team" target="_blank" rel="noopener">
+                View the AAM Institute team page ↗
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="role-detail" id="detail-sonalika">
+          <h2 class="detail-title">Industrial Training – Sonalika Tractors</h2>
+          <div class="detail-meta">Manufacturing plant · India</div>
+          <div class="detail-body">
+            <p>
+              Gained practical experience in tractor manufacturing, including assembly, quality checks and exposure to
+              mechanical systems and production workflows in a high-volume environment.
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const roleItems = document.querySelectorAll('.role-item');
+    const roleDetails = document.querySelectorAll('.role-detail');
+
+    roleItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const target = item.getAttribute('data-target');
+        roleItems.forEach(i => i.classList.remove('active'));
+        roleDetails.forEach(d => d.classList.remove('active'));
+
+        item.classList.add('active');
+        const detailEl = document.getElementById('detail-' + target);
+        if (detailEl) detailEl.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
