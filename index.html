@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <title>Arshdeep Singh – Market Research & Strategy Consultant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Arshdeep Singh – freelance consultant for market research, business case modeling, go-to-market strategy and digital marketing." />
+  <meta name="description" content="Portfolio of Arshdeep Singh – freelance consultant for market research, business case modelling, go-to-market strategy and digital marketing." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta property="og:title" content="Arshdeep Singh – Market Research & Strategy Consultant">
+  <meta property="og:description" content="Freelance support for market research, financial models, go-to-market strategy and digital marketing – especially for tech, mobility and deep-tech teams.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arshdeep1211.github.io/Portfolio/">
+
   <style>
     :root {
       --bg: #060810;
@@ -23,11 +29,7 @@
       --max-width: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -37,10 +39,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     main {
       max-width: var(--max-width);
@@ -301,9 +300,7 @@
 
     /* SECTIONS */
 
-    section {
-      margin-bottom: 28px;
-    }
+    section { margin-bottom: 28px; }
 
     .section-title-row {
       display: flex;
@@ -369,78 +366,6 @@
       border: 1px solid rgba(55,65,81,0.8);
     }
 
-    /* PROJECTS */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-
-    .project-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      padding: 14px 14px 12px;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-chip-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .project-chip {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: var(--chip);
-      border: 1px solid rgba(55,65,81,0.9);
-    }
-
-    .project-title {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .project-role {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .project-desc {
-      font-size: 12px;
-      color: #e5e7eb;
-    }
-
-    .project-kpi {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .project-tag {
-      font-size: 10px;
-      padding: 2px 7px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(31,41,55,0.8);
-      color: var(--muted);
-    }
-
     /* CLIENTS / INITIATIVES */
 
     .clients-strip {
@@ -452,12 +377,8 @@
       scrollbar-color: #4b5563 transparent;
     }
 
-    .clients-strip::-webkit-scrollbar {
-      height: 6px;
-    }
-    .clients-strip::-webkit-scrollbar-track {
-      background: transparent;
-    }
+    .clients-strip::-webkit-scrollbar { height: 6px; }
+    .clients-strip::-webkit-scrollbar-track { background: transparent; }
     .clients-strip::-webkit-scrollbar-thumb {
       background: #4b5563;
       border-radius: 999px;
@@ -508,44 +429,30 @@
       color: #e5e7eb;
     }
 
-    /* EXPERIENCE / EDUCATION */
+    /* PROCESS */
 
-    .timeline-grid {
+    .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
     }
 
-    .timeline-card {
+    .process-card {
       background: var(--bg-alt);
       border-radius: var(--radius-lg);
-      padding: 14px;
+      padding: 12px;
       border: 1px solid var(--border);
       font-size: 12px;
+      color: #e5e7eb;
     }
 
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
+    .process-title {
+      font-size: 13px;
+      font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .timeline-role {
-      font-weight: 600;
-      font-size: 12px;
-    }
-
-    .timeline-meta {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .timeline-body {
-      font-size: 12px;
-      color: #e5e7eb;
-      margin-top: 4px;
-    }
+    /* SKILLS */
 
     .skill-chips {
       display: flex;
@@ -600,18 +507,10 @@
     }
 
     @media (max-width: 600px) {
-      nav {
-        display: none;
-      }
-      main {
-        padding: 18px 14px 48px;
-      }
-      .hero-card {
-        padding: 18px 16px 14px;
-      }
-      .hero-title {
-        font-size: 23px;
-      }
+      nav { display: none; }
+      main { padding: 18px 14px 48px; }
+      .hero-card { padding: 18px 16px 14px; }
+      .hero-title { font-size: 23px; }
     }
   </style>
 </head>
@@ -620,10 +519,10 @@
     <header>
       <div class="logo">Arshdeep Singh</div>
       <nav>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#clients">Clients</a>
-        <a href="#experience">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="certifications.html">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">
@@ -642,22 +541,23 @@
           Market research, business cases, go-to-market – and content that supports it.
         </h1>
         <p class="hero-subtitle">
-          I help teams validate markets, prioritise use cases and build decision-grade business models – and
-          translate them into clear decks, campaigns and content, especially in mobility, deep-tech, space and industrial systems.
+          I work with founders and product teams to validate markets, prioritise use cases and build
+          decision-grade business models – then turn the results into clear decks, campaigns and content
+          that support fundraising, stakeholder buy-in and go-to-market.
         </p>
         <div class="hero-pills">
-          <span class="pill">Market \& competitive research</span>
+          <span class="pill">Market & competitive research</span>
           <span class="pill">Excel financial modelling</span>
           <span class="pill">Go-to-market strategy</span>
-          <span class="pill">Digital \& social media marketing</span>
-          <span class="pill">Deep-tech \& mobility</span>
+          <span class="pill">Digital & social media marketing</span>
+          <span class="pill">Deep-tech & mobility</span>
         </div>
         <div class="hero-cta-row">
           <a href="mailto:arshdeep.engg@gmail.com" class="btn-primary">
             Email me a project brief <span>↗</span>
           </a>
-          <a href="#projects" class="btn-ghost">
-            View selected projects
+          <a href="projects.html" class="btn-ghost">
+            View all projects
           </a>
         </div>
         <div class="hero-footnote">
@@ -673,11 +573,11 @@
           </div>
           <div>
             <div class="profile-name">Arshdeep Singh</div>
-            <div class="profile-role">Freelance Market Research, Strategy \& Digital Marketing</div>
+            <div class="profile-role">Freelance Market Research, Strategy & Digital Marketing</div>
           </div>
         </div>
         <div class="profile-meta">
-          MSc Management (TUM) · BEng Mechanical Engineering · Based in Munich, working remotely across Europe.
+          MSc Management (TUM) · BEng Mechanical Engineering · AAM Scholar (Advanced Air Mobility Institute) · Based in Munich, working remotely across Europe.
         </div>
         <div class="contact-grid">
           <div class="contact-item">
@@ -692,10 +592,10 @@
           </div>
         </div>
         <div class="mini-tags">
-          <span class="mini-tag">Mobility \& infrastructure</span>
-          <span class="mini-tag">Deep-tech \& quantum</span>
+          <span class="mini-tag">Mobility & infrastructure</span>
+          <span class="mini-tag">Deep-tech & quantum</span>
           <span class="mini-tag">Space markets</span>
-          <span class="mini-tag">Digital marketing \& content</span>
+          <span class="mini-tag">Digital marketing & content</span>
         </div>
       </aside>
     </section>
@@ -704,12 +604,12 @@
     <section id="services">
       <div class="section-title-row">
         <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">Ways I usually help teams in 2–8 week engagements.</p>
+        <p class="section-subtitle">How I usually help teams in 2–8 week engagements.</p>
       </div>
 
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-title">Market \& Opportunity Research</div>
+          <div class="service-title">Market & Opportunity Research</div>
           <div class="service-text">
             Structured desk research, segmentation and competitive intelligence to understand where and how to play.
           </div>
@@ -721,7 +621,7 @@
         </div>
 
         <div class="service-card">
-          <div class="service-title">Business Case \& Financial Models</div>
+          <div class="service-title">Business Case & Financial Models</div>
           <div class="service-text">
             Transparent Excel models that link assumptions to revenue, cost, ROI and payback for investor or management decisions.
           </div>
@@ -745,19 +645,19 @@
         </div>
 
         <div class="service-card">
-          <div class="service-title">Simulation \& KPI-Driven Decisions</div>
+          <div class="service-title">Data & KPI-Driven Decisions</div>
           <div class="service-text">
-            Using technical models and simulations (e.g. traffic, infrastructure) and turning KPIs into simple, actionable guidance.
+            Turning technical models, data and simulations into clear KPIs and decision-ready insights for investments, product strategy and operations.
           </div>
           <div class="service-tags">
-            <span class="service-tag">Aimsun (basic)</span>
             <span class="service-tag">KPI design</span>
             <span class="service-tag">Scenario analysis</span>
+            <span class="service-tag">Simulation & modelling</span>
           </div>
         </div>
 
         <div class="service-card">
-          <div class="service-title">Digital \& Social Media Marketing</div>
+          <div class="service-title">Digital & Social Media Marketing</div>
           <div class="service-text">
             Concept and execution of content and campaigns that support your product or initiative – from LinkedIn growth
             to launch events and newsletters.
@@ -765,318 +665,26 @@
           <div class="service-tags">
             <span class="service-tag">Social media management</span>
             <span class="service-tag">LinkedIn campaigns</span>
-            <span class="service-tag">Content \& copy</span>
-            <span class="service-tag">KPI tracking \& reports</span>
+            <span class="service-tag">Content & copy</span>
+            <span class="service-tag">KPI tracking & reports</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-title-row">
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-subtitle">A mix of client, research and deep-tech work.</p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Thesis -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Strategy \& Market Entry</span>
-            <span>Academic · 3 cities</span>
-          </div>
-          <h3 class="project-title">Market Entry Framework for a New Mobility System</h3>
-          <p class="project-role">Master’s Thesis · Technical University of Munich</p>
-          <p class="project-desc">
-            Built a commercialization framework for a technology-driven urban mobility service, comparing three
-            international cities across regulation, demand and infrastructure readiness.
-          </p>
-          <p class="project-kpi">
-            Segmented <strong>4 customer groups</strong>, <strong>12 use cases</strong> and built a readiness index using
-            <strong>15+ KPIs</strong> for city comparison.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Market strategy</span>
-            <span class="project-tag">Infrastructure</span>
-            <span class="project-tag">Mobility</span>
-          </div>
-        </article>
-
-        <!-- AFT -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Business Case</span>
-            <span>Industry · Training</span>
-          </div>
-          <h3 class="project-title">Advanced Flight Trainer (AFT) – Investment Case</h3>
-          <p class="project-role">Market Intelligence · Reiser Simulation \& Training</p>
-          <p class="project-desc">
-            Developed a full commercial business case for a new training simulator, linking fleet demand and
-            certification cycles to revenues, costs and payback.
-          </p>
-          <p class="project-kpi">
-            Modelled multiple pricing scenarios and simulated ROI and payback based on utilization and adoption rates.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Excel modelling</span>
-            <span class="project-tag">Product strategy</span>
-            <span class="project-tag">B2B</span>
-          </div>
-        </article>
-
-        <!-- Business Jets -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Market Intelligence</span>
-            <span>Global · B2B</span>
-          </div>
-          <h3 class="project-title">Business Jets Global Market Analysis</h3>
-          <p class="project-role">Market Intelligence · Reiser Simulation \& Training</p>
-          <p class="project-desc">
-            Analysed business jet fleets by segment, region and operator to quantify training demand and prioritise
-            commercial focus.
-          </p>
-          <p class="project-kpi">
-            Covered <strong>200+ aircraft variants</strong> across multiple segments and compared Europe, Middle East
-            and global fleets.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Segmentation</span>
-            <span class="project-tag">Opportunity sizing</span>
-          </div>
-        </article>
-
-        <!-- Maintenance Training -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Market Mapping</span>
-            <span>Europe</span>
-          </div>
-          <h3 class="project-title">European Maintenance Training Market Mapping</h3>
-          <p class="project-role">Market Intelligence · Reiser Simulation \& Training</p>
-          <p class="project-desc">
-            Mapped EASA Part-147 maintenance schools across Europe to support expansion planning and partnership
-            strategy.
-          </p>
-          <p class="project-kpi">
-            Identified and classified <strong>70+ certified organisations</strong> across <strong>11 countries</strong>.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">TAM / capacity</span>
-            <span class="project-tag">Education</span>
-          </div>
-        </article>
-
-        <!-- Hoist Benchmark -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Benchmarking</span>
-            <span>EU · US · ME</span>
-          </div>
-          <h3 class="project-title">Helicopter Hoist Training Provider Benchmark</h3>
-          <p class="project-role">Market Intelligence · Reiser Simulation \& Training</p>
-          <p class="project-desc">
-            Compared live-flight and simulation-based hoist training providers across Europe, USA and the Middle East.
-          </p>
-          <p class="project-kpi">
-            Benchmarked certification, duration, costs and training methods to identify gaps for simulator-based
-            products.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Benchmarking</span>
-            <span class="project-tag">Safety</span>
-          </div>
-        </article>
-
-        <!-- AMIUS -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Simulation \& Policy</span>
-            <span>Bavaria</span>
-          </div>
-          <h3 class="project-title">AMIUS – U-Space \& Urban Air Mobility Simulation</h3>
-          <p class="project-role">Research Assistant · TUM Chair of Traffic Engineering</p>
-          <p class="project-desc">
-            Integrated drones and VTOL services into a multimodal traffic simulation to test where vertiports and
-            corridors should be placed.
-          </p>
-          <p class="project-kpi">
-            Defined KPIs such as delay, harmonic speed and RGap\% and used them to compare infrastructure scenarios.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Simulation</span>
-            <span class="project-tag">Infrastructure</span>
-          </div>
-        </article>
-
-        <!-- Quantum -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Deep-Tech GTM</span>
-            <span>Startup</span>
-          </div>
-          <h3 class="project-title">Quantum Sensor Market Entry \& GTM Strategy</h3>
-          <p class="project-role">Project Study · Quantum Diamonds</p>
-          <p class="project-desc">
-            Evaluated application fields for quantum sensors and prioritised where to enter first based on feasibility
-            and value.
-          </p>
-          <p class="project-kpi">
-            Screened <strong>5+ industries</strong>, designed scoring frameworks and contributed to investor-facing
-            material.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Deep-tech</span>
-            <span class="project-tag">GTM</span>
-          </div>
-        </article>
-
-        <!-- Delta Orbit Space trio -->
-
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Space Markets</span>
-            <span>Global</span>
-          </div>
-          <h3 class="project-title">In-Orbit Refuelling Market Study</h3>
-          <p class="project-role">Market Research · Delta Orbit</p>
-          <p class="project-desc">
-            Analysed economic viability of refuelling services vs satellite replacement for different orbital regimes.
-          </p>
-          <p class="project-kpi">
-            Modelled demand over 10+ years linked to satellite fleet evolution and servicing concepts.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Space</span>
-            <span class="project-tag">Infrastructure</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Space Tech</span>
-            <span>Engines</span>
-          </div>
-          <h3 class="project-title">In-Space Propulsion Engine Benchmark</h3>
-          <p class="project-role">Market \& Technology Research · Delta Orbit</p>
-          <p class="project-desc">
-            Compared propulsion technologies and suppliers based on performance, cost and maturity for in-space
-            logistics.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Benchmarking</span>
-            <span class="project-tag">Deep-tech</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Future Markets</span>
-            <span>Lunar</span>
-          </div>
-          <h3 class="project-title">Lunar Transfer Vehicle \& Cislunar Logistics</h3>
-          <p class="project-role">Market Research · Delta Orbit</p>
-          <p class="project-desc">
-            Assessed long-term demand and pricing for payload transport in the emerging lunar economy.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Space</span>
-            <span class="project-tag">Forward-looking</span>
-          </div>
-        </article>
-
-        <!-- HORYZN -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Student Initiative</span>
-            <span>HORYZN · TUM</span>
-          </div>
-          <h3 class="project-title">HORYZN – UAV \& eVTOL Initiative</h3>
-          <p class="project-role">Business Development \& Marketing Lead</p>
-          <p class="project-desc">
-            Supported a student-led UAV / eVTOL initiative with partnerships, sponsorship outreach, social media and
-            event organisation for technology demonstrations and launches.
-          </p>
-          <p class="project-kpi">
-            Helped coordinate campaigns and events for multiple projects (e.g. Kolibri drone, Silencio Gamma, Mission
-            Pulse) and engaged industry partners and sponsors.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Business development</span>
-            <span class="project-tag">Marketing</span>
-            <span class="project-tag">Events</span>
-          </div>
-        </article>
-
-        <!-- Behaviour & Creativity -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Behaviour</span>
-            <span>Experiment</span>
-          </div>
-          <h3 class="project-title">Sustainable Behaviour Nudge Experiment</h3>
-          <p class="project-role">Seminar Project · TUM</p>
-          <p class="project-desc">
-            Designed an experiment on menu design and sustainability messaging to see how much behaviour can be shifted
-            through light nudges.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Behavioural economics</span>
-            <span class="project-tag">Experiment design</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Creativity \& Teams</span>
-            <span>Seminar</span>
-          </div>
-          <h3 class="project-title">Creativity \& Startup Simulation Program</h3>
-          <p class="project-role">Facilitation · TUM</p>
-          <p class="project-desc">
-            Facilitated SCAMPER and effectuation-based startup simulations, turning theory on creativity into exercises
-            for real teams.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Workshops</span>
-            <span class="project-tag">Innovation</span>
-          </div>
-        </article>
-
-        <!-- Industrial training -->
-        <article class="project-card">
-          <div class="project-chip-row">
-            <span class="project-chip">Industrial Systems</span>
-            <span>Manufacturing</span>
-          </div>
-          <h3 class="project-title">Sonalika Tractor Manufacturing Training</h3>
-          <p class="project-role">Industrial Training · Sonalika</p>
-          <p class="project-desc">
-            Hands-on exposure to drivetrain, hydraulic and assembly processes in a high-volume tractor manufacturing
-            plant.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Manufacturing</span>
-            <span class="project-tag">Mechanical systems</span>
-          </div>
-        </article>
       </div>
     </section>
 
     <!-- CLIENTS / INITIATIVES -->
     <section id="clients">
       <div class="section-title-row">
-        <h2 class="section-title">Clients \& Initiatives</h2>
+        <h2 class="section-title">Clients & Initiatives</h2>
         <p class="section-subtitle">Teams I’ve worked with on strategy, research or communication.</p>
       </div>
 
       <div class="clients-strip">
         <div class="client-card">
           <div class="client-logo">
-            <div class="client-logo-placeholder"><!-- Replace with <img src="reiser-logo.png" ...> --></div>
+            <div class="client-logo-placeholder"></div>
             <div>
-              <div class="client-name">Reiser Simulation \& Training</div>
+              <div class="client-name">Reiser Simulation & Training</div>
               <div class="client-role">Market Intelligence</div>
             </div>
           </div>
@@ -1087,10 +695,10 @@
 
         <div class="client-card">
           <div class="client-logo">
-            <div class="client-logo-placeholder"><!-- TUM logo placeholder --></div>
+            <div class="client-logo-placeholder"></div>
             <div>
               <div class="client-name">Technical University of Munich</div>
-              <div class="client-role">Research Assistant</div>
+              <div class="client-role">Research Assistant & Projects</div>
             </div>
           </div>
           <div class="client-focus">
@@ -1100,10 +708,10 @@
 
         <div class="client-card">
           <div class="client-logo">
-            <div class="client-logo-placeholder"><!-- HORYZN logo placeholder --></div>
+            <div class="client-logo-placeholder"></div>
             <div>
               <div class="client-name">HORYZN (TUM Initiative)</div>
-              <div class="client-role">Business Development \& Marketing</div>
+              <div class="client-role">Business Development & Marketing</div>
             </div>
           </div>
           <div class="client-focus">
@@ -1113,10 +721,10 @@
 
         <div class="client-card">
           <div class="client-logo">
-            <div class="client-logo-placeholder"><!-- Quantum Diamonds logo placeholder --></div>
+            <div class="client-logo-placeholder"></div>
             <div>
               <div class="client-name">Quantum Diamonds</div>
-              <div class="client-role">Market Research \& GTM</div>
+              <div class="client-role">Market Research & GTM</div>
             </div>
           </div>
           <div class="client-focus">
@@ -1126,7 +734,7 @@
 
         <div class="client-card">
           <div class="client-logo">
-            <div class="client-logo-placeholder"><!-- Delta Orbit logo placeholder --></div>
+            <div class="client-logo-placeholder"></div>
             <div>
               <div class="client-name">Delta Orbit</div>
               <div class="client-role">Space Market Analysis</div>
@@ -1136,103 +744,77 @@
             Market studies on in-orbit services, propulsion and lunar logistics.
           </div>
         </div>
+
+        <div class="client-card">
+          <div class="client-logo">
+            <div class="client-logo-placeholder"></div>
+            <div>
+              <div class="client-name">Advanced Air Mobility Institute</div>
+              <div class="client-role">AAM Scholar</div>
+            </div>
+          </div>
+          <div class="client-focus">
+            Member of the global AAM Scholars network, contributing AAM market research perspectives.
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE / EDUCATION -->
-    <section id="experience">
+    <!-- HOW I WORK -->
+    <section id="process">
       <div class="section-title-row">
-        <h2 class="section-title">Experience \& Background</h2>
-        <p class="section-subtitle">Why I can connect tech, markets, numbers and communication.</p>
+        <h2 class="section-title">How I work</h2>
+        <p class="section-subtitle">A simple, structured way to get from question to decision.</p>
       </div>
 
-      <div class="timeline-grid">
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Freelance Consultant</div>
-              <div class="timeline-meta">Market Research, Strategy \& Digital Marketing · 2025–</div>
-            </div>
-            <div class="timeline-meta">Munich / Remote</div>
-          </div>
-          <div class="timeline-body">
-            Supporting founders and product teams with market validation, business cases, GTM strategy and
-            content/campaigns that explain complex products clearly.
-          </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-title">1 · Brief</div>
+          <p>
+            We define your key questions, constraints, timeline and outputs (e.g. deck, model, report).
+          </p>
         </div>
-
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Working Student – Market Intelligence</div>
-              <div class="timeline-meta">Reiser Simulation \& Training · 2023–2024</div>
-            </div>
-            <div class="timeline-meta">Gilching, Germany</div>
-          </div>
-          <div class="timeline-body">
-            Built market studies and business cases for training and simulation products in aviation and beyond,
-            including fleet analysis and product ROI models.
-          </div>
+        <div class="process-card">
+          <div class="process-title">2 · Research & Modelling</div>
+          <p>
+            I run structured desk research, stakeholder calls (if needed) and build the first models or frameworks.
+          </p>
         </div>
-
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Research Assistant</div>
-              <div class="timeline-meta">TUM Chair of Traffic Engineering · 2024</div>
-            </div>
-            <div class="timeline-meta">Munich, Germany</div>
-          </div>
-          <div class="timeline-body">
-            Worked on the AMIUS project integrating new air mobility services into traffic simulation, translating
-            technical KPIs into infrastructure recommendations.
-          </div>
+        <div class="process-card">
+          <div class="process-title">3 · Synthesis</div>
+          <p>
+            We review intermediate results, refine assumptions and focus on what really changes the decision.
+          </p>
         </div>
-
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Business Development \& Marketing</div>
-              <div class="timeline-meta">HORYZN – UAV \& eVTOL Initiative · 2022–2024</div>
-            </div>
-            <div class="timeline-meta">TUM, Munich</div>
-          </div>
-          <div class="timeline-body">
-            Supported the student initiative with partner outreach, sponsorships, social media and event management for
-            drone and eVTOL projects like Kolibri and Silencio Gamma, including launch communications and press-style content.
-          </div>
-        </div>
-
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Education</div>
-              <div class="timeline-meta">TUM \& Chandigarh University</div>
-            </div>
-          </div>
-          <div class="timeline-body">
-            MSc Management (TUM), focusing on strategy, innovation and technology-driven business models, plus BEng in
-            Mechanical Engineering providing a solid technical foundation.
-          </div>
+        <div class="process-card">
+          <div class="process-title">4 · Handover</div>
+          <p>
+            You receive final deliverables (slides, Excel, brief) plus a short walkthrough so your team can
+            work with it independently.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div style="margin-top:16px;">
-        <div class="section-subtitle" style="margin-bottom:6px;">Tools \& skills I often use</div>
-        <div class="skill-chips">
-          <span class="skill-chip">Excel \& Google Sheets (advanced)</span>
-          <span class="skill-chip">PowerPoint / storytelling</span>
-          <span class="skill-chip">Market \& desk research</span>
-          <span class="skill-chip">Business case modelling</span>
-          <span class="skill-chip">Aimsun (basic simulation)</span>
-          <span class="skill-chip">SAP PLM / S4HANA (conceptual)</span>
-          <span class="skill-chip">Social media management (LinkedIn)</span>
-          <span class="skill-chip">Digital \& online marketing</span>
-          <span class="skill-chip">WordPress, HTML / CSS (basic)</span>
-          <span class="skill-chip">Newsletter creation \& A/B testing (basic)</span>
-          <span class="skill-chip">KPI tracking \& performance analysis</span>
-          <span class="skill-chip">Canva \& simple video editing</span>
-        </div>
+    <!-- SKILLS -->
+    <section>
+      <div class="section-title-row">
+        <h2 class="section-title">Tools & Skills</h2>
+        <p class="section-subtitle">What I use most often in projects.</p>
+      </div>
+      <div class="skill-chips">
+        <span class="skill-chip">Excel & Google Sheets (advanced)</span>
+        <span class="skill-chip">PowerPoint / storytelling</span>
+        <span class="skill-chip">Market & desk research</span>
+        <span class="skill-chip">Business case modelling</span>
+        <span class="skill-chip">Aimsun (basic simulation)</span>
+        <span class="skill-chip">SAP PLM / S4HANA (conceptual)</span>
+        <span class="skill-chip">Social media management (LinkedIn)</span>
+        <span class="skill-chip">Digital & online marketing</span>
+        <span class="skill-chip">WordPress, HTML / CSS (basic)</span>
+        <span class="skill-chip">Newsletter creation & A/B testing (basic)</span>
+        <span class="skill-chip">KPI tracking & performance analysis</span>
+        <span class="skill-chip">Canva & simple video editing</span>
       </div>
     </section>
 
