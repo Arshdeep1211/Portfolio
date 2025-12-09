@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects – Arshdeep Singh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Selected projects by Arshdeep Singh – market research, business cases, go-to-market and more." />
+  <style>
+    /* SAME BASE STYLES AS INDEX (shortened a bit but visually identical) */
+    :root {
+      --bg: #060810;
+      --bg-alt: #0b0f1a;
+      --card: #111726;
+      --accent: #4f46e5;
+      --accent-strong: #22c55e;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --chip: #111827;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.45);
+      --max-width: 1100px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%);
+      color: var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a { color:inherit; text-decoration:none; }
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    header {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:24px;
+    }
+    header .logo {
+      font-weight:600;
+      letter-spacing:0.06em;
+      font-size:13px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    nav {
+      display:flex;
+      gap:16px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    nav a {
+      padding:4px 8px;
+      border-radius:999px;
+      transition:background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background:rgba(148,163,184,0.12);
+      color:#e5e7eb;
+    }
+    .cta-link {
+      border-radius:999px;
+      padding:6px 12px;
+      border:1px solid rgba(148,163,184,0.4);
+      font-size:12px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:var(--muted);
+    }
+    .page-title {
+      font-size:22px;
+      font-weight:650;
+      margin-bottom:4px;
+    }
+    .page-subtitle {
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:16px;
+      max-width:620px;
+    }
+    .layout-2col {
+      display:grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+      gap:16px;
+      align-items:flex-start;
+    }
+    .list-box {
+      background:var(--bg-alt);
+      border-radius:var(--radius-lg);
+      border:1px solid var(--border);
+      padding:12px;
+    }
+    .list-title {
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .project-list {
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .project-item {
+      border-radius:10px;
+      padding:6px 8px;
+      font-size:12px;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:var(--muted);
+    }
+    .project-item span.label {
+      font-weight:500;
+      color:#e5e7eb;
+    }
+    .project-item span.meta {
+      font-size:11px;
+    }
+    .project-item.active {
+      background:rgba(79,70,229,0.18);
+      border:1px solid rgba(129,140,248,0.8);
+      color:#e5e7eb;
+    }
+    .detail-box {
+      background:var(--card);
+      border-radius:var(--radius-lg);
+      border:1px solid var(--border);
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow-soft);
+    }
+    .project-detail {
+      display:none;
+      font-size:13px;
+    }
+    .project-detail.active { display:block; }
+    .detail-title {
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .detail-meta {
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .detail-body p { margin-bottom:6px; color:#e5e7eb; }
+    .tag-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+      margin-bottom:4px;
+    }
+    .tag {
+      font-size:10px;
+      padding:2px 7px;
+      border-radius:999px;
+      background:var(--chip);
+      border:1px solid rgba(55,65,81,0.9);
+      color:var(--muted);
+    }
+    @media (max-width: 800px) {
+      .layout-2col { grid-template-columns:1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { display:none; }
+      main { padding:18px 14px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo"><a href="index.html">Arshdeep Singh</a></div>
+      <nav>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
+    </header>
+
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">
+      A selection of projects across market research, business case modelling, simulation, deep-tech and space. Choose a project on the left to see more details.
+    </p>
+
+    <div class="layout-2col">
+      <!-- LEFT: LIST -->
+      <aside class="list-box">
+        <div class="list-title">Project list</div>
+        <div class="project-list">
+          <div class="project-item active" data-target="aft">
+            <span class="label">AFT – Investment Case</span>
+            <span class="meta">Reiser · Business case</span>
+          </div>
+          <div class="project-item" data-target="bizjets">
+            <span class="label">Business Jets Global Analysis</span>
+            <span class="meta">Reiser · Market study</span>
+          </div>
+          <div class="project-item" data-target="maintenance">
+            <span class="label">Maintenance Training Mapping</span>
+            <span class="meta">Reiser · Market mapping</span>
+          </div>
+          <div class="project-item" data-target="hoist">
+            <span class="label">Helicopter Hoist Benchmark</span>
+            <span class="meta">Reiser · Benchmarking</span>
+          </div>
+          <div class="project-item" data-target="amius">
+            <span class="label">AMIUS – U-Space Simulation</span>
+            <span class="meta">TUM · Simulation</span>
+          </div>
+          <div class="project-item" data-target="quantum">
+            <span class="label">Quantum Sensor GTM</span>
+            <span class="meta">Quantum Diamonds · GTM</span>
+          </div>
+          <div class="project-item" data-target="refuelling">
+            <span class="label">In-Orbit Refuelling</span>
+            <span class="meta">Delta Orbit · Market</span>
+          </div>
+          <div class="project-item" data-target="propulsion">
+            <span class="label">In-Space Propulsion Benchmark</span>
+            <span class="meta">Delta Orbit · Tech</span>
+          </div>
+          <div class="project-item" data-target="lunar">
+            <span class="label">Lunar Transfer Vehicle</span>
+            <span class="meta">Delta Orbit · Future markets</span>
+          </div>
+          <div class="project-item" data-target="horyzn">
+            <span class="label">HORYZN Initiative</span>
+            <span class="meta">TUM · Biz dev & marketing</span>
+          </div>
+          <div class="project-item" data-target="thesis">
+            <span class="label">Market Entry Framework (Thesis)</span>
+            <span class="meta">TUM · Strategy</span>
+          </div>
+          <div class="project-item" data-target="behaviour">
+            <span class="label">Sustainable Behaviour Nudge</span>
+            <span class="meta">TUM · Experiment</span>
+          </div>
+          <div class="project-item" data-target="creativity">
+            <span class="label">Creativity & Startup Simulation</span>
+            <span class="meta">TUM · Program design</span>
+          </div>
+          <div class="project-item" data-target="sonalika">
+            <span class="label">Sonalika Manufacturing Training</span>
+            <span class="meta">Industrial · Plant</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: DETAILS -->
+      <section class="detail-box">
+        <!-- AFT -->
+        <article class="project-detail active" id="detail-aft">
+          <h2 class="detail-title">Advanced Flight Trainer (AFT) – Investment Case</h2>
+          <div class="detail-meta">Reiser Simulation & Training · Business case & financial modelling</div>
+          <div class="detail-body">
+            <p>
+              Developed a full commercial business case for a new simulator product, linking fleet demand,
+              recurrent training requirements and certification cycles to revenue, operating costs and payback.
+            </p>
+            <p>
+              Built a modular Excel model with adjustable assumptions (utilisation, pricing, discount factors),
+              enabling scenario analysis for sales, finance and management.
+            </p>
+            <p>
+              <strong>Impact:</strong> Provided a decision-grade tool to compare different commercialisation and pricing
+              strategies and support internal investment decisions.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Excel modelling</span>
+            <span class="tag">ROI & payback</span>
+            <span class="tag">Simulator training</span>
+          </div>
+        </article>
+
+        <!-- Business jets -->
+        <article class="project-detail" id="detail-bizjets">
+          <h2 class="detail-title">Business Jets Global Market Analysis</h2>
+          <div class="detail-meta">Reiser Simulation & Training · Market intelligence</div>
+          <div class="detail-body">
+            <p>
+              Structured the business jet market into ultra-long-range, heavy, mid-size, light and very light segments
+              and compiled fleet data by aircraft type, operator and region.
+            </p>
+            <p>
+              Analysed global, European and Middle Eastern fleets to estimate training demand and prioritise target
+              aircraft types for simulator and training solutions.
+            </p>
+            <p>
+              <strong>Scope:</strong> Covered more than 200 aircraft variants and multiple training providers to
+              benchmark availability and gaps.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Segmentation</span>
+            <span class="tag">Opportunity sizing</span>
+            <span class="tag">Aviation</span>
+          </div>
+        </article>
+
+        <!-- Maintenance -->
+        <article class="project-detail" id="detail-maintenance">
+          <h2 class="detail-title">European Maintenance Training Market Mapping</h2>
+          <div class="detail-meta">Reiser Simulation & Training · Market mapping</div>
+          <div class="detail-body">
+            <p>
+              Researched EASA Part-147 maintenance schools and training organisations across Europe to understand where
+              and how maintenance training is delivered today.
+            </p>
+            <p>
+              Classified organisations by country, approval type, aircraft focus (fixed-wing/rotary) and training
+              offering (CAT A/B1/B2, type ratings).
+            </p>
+            <p>
+              <strong>Coverage:</strong> Identified and compared over 70 certified organisations across 11 countries,
+              providing a basis for partnership and market entry strategies.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Market mapping</span>
+            <span class="tag">Training providers</span>
+            <span class="tag">Regulation</span>
+          </div>
+        </article>
+
+        <!-- Hoist -->
+        <article class="project-detail" id="detail-hoist">
+          <h2 class="detail-title">Helicopter Hoist Training Provider Benchmark</h2>
+          <div class="detail-meta">Reiser Simulation & Training · Benchmarking</div>
+          <div class="detail-body">
+            <p>
+              Benchmarked helicopter hoist training providers in Europe, North America and the Middle East, focusing on
+              training concepts, regulatory approvals and pricing.
+            </p>
+            <p>
+              Compared live-flight training to simulator and static solutions and analysed course durations, recurrence
+              intervals and training tools (FFS, VR, static towers).
+            </p>
+            <p>
+              <strong>Outcome:</strong> Identified differentiation opportunities for simulator-based and blended training concepts.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Benchmarking</span>
+            <span class="tag">Safety</span>
+            <span class="tag">Training concepts</span>
+          </div>
+        </article>
+
+        <!-- AMIUS -->
+        <article class="project-detail" id="detail-amius">
+          <h2 class="detail-title">AMIUS – U-Space & Urban Air Mobility Simulation</h2>
+          <div class="detail-meta">TUM Chair of Traffic Engineering · Research assistant project</div>
+          <div class="detail-body">
+            <p>
+              Contributed to a traffic simulation framework integrating drones and VTOL services into multimodal
+              transport networks in Bavaria.
+            </p>
+            <p>
+              Helped model vertiport locations, air corridors and intermodal hubs in Aimsun Next and analysed the impact
+              on network performance using KPIs such as delay time, harmonic speed, traffic flow and RGap%.
+            </p>
+            <p>
+              <strong>Goal:</strong> Provide infrastructure and policy recommendations for future U-Space and UAM implementation.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Simulation</span>
+            <span class="tag">Mobility</span>
+            <span class="tag">Policy support</span>
+          </div>
+        </article>
+
+        <!-- Quantum -->
+        <article class="project-detail" id="detail-quantum">
+          <h2 class="detail-title">Quantum Sensor Market Entry & GTM Strategy</h2>
+          <div class="detail-meta">Quantum Diamonds · Project study</div>
+          <div class="detail-body">
+            <p>
+              Evaluated several verticals (semiconductor, energy, healthcare and more) for quantum sensing applications
+              using NV center-based diamond sensors.
+            </p>
+            <p>
+              Applied feasibility and value filters to prioritise 5+ use cases and developed a lean business model
+              canvas and customer personas for the most promising segment.
+            </p>
+            <p>
+              <strong>Deliverables:</strong> Opportunity overview, prioritisation logic and a go-to-market concept
+              that was incorporated into investor pitch material.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Deep-tech</span>
+            <span class="tag">GTM</span>
+            <span class="tag">Business model canvas</span>
+          </div>
+        </article>
+
+        <!-- Refuelling -->
+        <article class="project-detail" id="detail-refuelling">
+          <h2 class="detail-title">In-Orbit Refuelling Market Study</h2>
+          <div class="detail-meta">Delta Orbit · Market research</div>
+          <div class="detail-body">
+            <p>
+              Analysed the economics of in-orbit refuelling concepts compared to conventional satellite replacement,
+              considering different orbital regimes and mission profiles.
+            </p>
+            <p>
+              Built a forward-looking view on serviceable market size based on satellite fleet projections and refuelling
+              concepts.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Space</span>
+            <span class="tag">Infrastructure</span>
+            <span class="tag">Future markets</span>
+          </div>
+        </article>
+
+        <!-- Propulsion -->
+        <article class="project-detail" id="detail-propulsion">
+          <h2 class="detail-title">In-Space Propulsion Engine Benchmark</h2>
+          <div class="detail-meta">Delta Orbit · Tech & market study</div>
+          <div class="detail-body">
+            <p>
+              Mapped key in-space propulsion technologies and suppliers and compared them on performance, cost,
+              maturity and application fit.
+            </p>
+            <p>
+              Summarised trade-offs between different propulsion options to support technology and partner selection.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Benchmarking</span>
+            <span class="tag">Propulsion</span>
+            <span class="tag">Space tech</span>
+          </div>
+        </article>
+
+        <!-- Lunar -->
+        <article class="project-detail" id="detail-lunar">
+          <h2 class="detail-title">Lunar Transfer Vehicle & Cislunar Logistics</h2>
+          <div class="detail-meta">Delta Orbit · Future market analysis</div>
+          <div class="detail-body">
+            <p>
+              Researched the emerging cislunar and lunar logistics ecosystem and assessed potential demand and revenue
+              models for transfer vehicles.
+            </p>
+            <p>
+              Synthesised perspectives from agencies, private operators and infrastructure concepts to sketch potential
+              business models.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Space</span>
+            <span class="tag">Forward-looking</span>
+          </div>
+        </article>
+
+        <!-- HORYZN -->
+        <article class="project-detail" id="detail-horyzn">
+          <h2 class="detail-title">HORYZN – UAV & eVTOL Initiative</h2>
+          <div class="detail-meta">TUM Initiative · Business development & marketing</div>
+          <div class="detail-body">
+            <p>
+              Supported the student initiative HORYZN with partner outreach, sponsorship proposals and communication
+              for drone and eVTOL technology projects.
+            </p>
+            <p>
+              Helped coordinate social media content, launch announcements and event organisation for projects such as
+              Kolibri drone, Silencio Gamma and Mission Pulse.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Business development</span>
+            <span class="tag">Social media</span>
+            <span class="tag">Events</span>
+          </div>
+        </article>
+
+        <!-- Thesis -->
+        <article class="project-detail" id="detail-thesis">
+          <h2 class="detail-title">Market Entry Framework for a New Mobility System</h2>
+          <div class="detail-meta">Master’s Thesis · Technical University of Munich</div>
+          <div class="detail-body">
+            <p>
+              Developed a holistic framework for the market introduction of a new advanced air mobility service and
+              compared three cities on their readiness and attractiveness.
+            </p>
+            <p>
+              Segmented customer groups and use cases, designed a readiness index with more than 15 indicators and
+              translated findings into strategic recommendations.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Market strategy</span>
+            <span class="tag">Urban mobility</span>
+            <span class="tag">Index design</span>
+          </div>
+        </article>
+
+        <!-- Behaviour -->
+        <article class="project-detail" id="detail-behaviour">
+          <h2 class="detail-title">Sustainable Behaviour Nudge Experiment</h2>
+          <div class="detail-meta">Seminar project · TUM</div>
+          <div class="detail-body">
+            <p>
+              Designed an experiment around menu design and sustainability messaging to test how small “nudges”
+              influence food choices.
+            </p>
+            <p>
+              Applied concepts from behavioural economics and analysed the impact of different message framings on
+              selected options.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Behavioural economics</span>
+            <span class="tag">Experiment design</span>
+          </div>
+        </article>
+
+        <!-- Creativity -->
+        <article class="project-detail" id="detail-creativity">
+          <h2 class="detail-title">Creativity & Startup Simulation Program</h2>
+          <div class="detail-meta">Seminar project · TUM</div>
+          <div class="detail-body">
+            <p>
+              Facilitated SCAMPER and effectuation-based ideation and startup simulation sessions, translating theory on
+              team creativity into practical exercises.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Workshops</span>
+            <span class="tag">Innovation</span>
+          </div>
+        </article>
+
+        <!-- Sonalika -->
+        <article class="project-detail" id="detail-sonalika">
+          <h2 class="detail-title">Sonalika Tractor Manufacturing Training</h2>
+          <div class="detail-meta">Industrial training · Sonalika</div>
+          <div class="detail-body">
+            <p>
+              Gained hands-on exposure to tractor manufacturing processes, including drivetrain assembly, hydraulics and
+              quality checks in a high-volume production environment.
+            </p>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Manufacturing</span>
+            <span class="tag">Mechanical systems</span>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const items = document.querySelectorAll('.project-item');
+    const details = document.querySelectorAll('.project-detail');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const target = item.getAttribute('data-target');
+        items.forEach(i => i.classList.remove('active'));
+        details.forEach(d => d.classList.remove('active'));
+
+        item.classList.add('active');
+        const detailEl = document.getElementById('detail-' + target);
+        if (detailEl) detailEl.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
