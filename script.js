@@ -1,67 +1,45 @@
-// ---------------------------
 // Mobile nav toggle
-// ---------------------------
-const navToggle = document.getElementById("navToggle");
-const siteNav = document.getElementById("siteNav");
+const navToggle = document.getElementById('navToggle');
+const siteNav = document.getElementById('siteNav');
 
 if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    siteNav.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", siteNav.classList.contains("open") ? "true" : "false");
+  navToggle.addEventListener('click', () => {
+    siteNav.classList.toggle('open');
   });
 }
 
-// Close mobile nav after click
-if (siteNav) {
-  siteNav.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => siteNav.classList.remove("open"));
-  });
-}
-
-// ---------------------------
-// Active link highlight
-// ---------------------------
-(function setActiveNav(){
-  const page = document.body.getAttribute("data-page");
-  if (!page) return;
-  document.querySelectorAll(`[data-nav="${page}"]`).forEach(el => el.classList.add("active"));
-})();
-
-// ---------------------------
 // Services modal
-// ---------------------------
-const modalOverlay = document.getElementById("modalOverlay");
-const modalTitle = document.getElementById("modalTitle");
-const modalBody = document.getElementById("modalBody");
-const modalClose = document.getElementById("modalClose");
+const modal = document.getElementById('serviceModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+const modalClose = document.getElementById('modalClose');
 
-function openModal(title, html) {
-  if (!modalOverlay) return;
-  modalTitle.textContent = title || "Details";
-  modalBody.innerHTML = html || "";
-  modalOverlay.style.display = "flex";
+function openModal(title, body){
+  modalTitle.textContent = title || 'Service';
+  modalBody.textContent = body || '';
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
 }
 
-function closeModal() {
-  if (!modalOverlay) return;
-  modalOverlay.style.display = "none";
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
 }
 
-if (modalClose) modalClose.addEventListener("click", closeModal);
-if (modalOverlay) {
-  modalOverlay.addEventListener("click", (e) => {
-    if (e.target === modalOverlay) closeModal();
+document.querySelectorAll('.service-tile').forEach(tile => {
+  tile.addEventListener('click', () => {
+    openModal(tile.getAttribute('data-title'), tile.getAttribute('data-body'));
   });
-}
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
 });
 
-// Bind tiles
-document.querySelectorAll("[data-service]").forEach(tile => {
-  tile.addEventListener("click", () => {
-    const title = tile.getAttribute("data-title") || "Service";
-    const body = tile.getAttribute("data-body") || "";
-    openModal(title, body);
+if (modalClose) modalClose.addEventListener('click', closeModal);
+
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
   });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
 });
