@@ -4,88 +4,78 @@
   <meta charset="UTF-8" />
   <title>Certifications – Arshdeep Singh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root{
-      --bg:#060810;--bg-alt:#0b0f1a;--card:#111726;
-      --text:#f9fafb;--muted:#9ca3af;--border:#1f2937;
-      --radius-lg:18px;--max-width:1100px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#111827 0,#020617 60%);
-      color:var(--text);line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none;}
-    main{max-width:var(--max-width);margin:0 auto;padding:24px 16px 64px;}
-    header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;}
-    .logo{font-weight:600;letter-spacing:0.06em;font-size:13px;text-transform:uppercase;color:var(--muted);}
-    nav{display:flex;gap:16px;font-size:13px;color:var(--muted);}
-    nav a{padding:4px 8px;border-radius:999px;}
-    nav a:hover{background:rgba(148,163,184,0.12);color:#e5e7eb;}
-    .cta-link{border-radius:999px;padding:6px 12px;border:1px solid rgba(148,163,184,0.4);font-size:12px;}
-    .page-title{font-size:22px;font-weight:650;margin-bottom:4px;}
-    .page-subtitle{font-size:13px;color:var(--muted);margin-bottom:16px;max-width:620px;}
-    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
-    .cert-card{background:var(--card);border-radius:var(--radius-lg);border:1px solid var(--border);padding:14px;}
-    .cert-title{font-size:15px;font-weight:600;margin-bottom:4px;}
-    .cert-meta{font-size:12px;color:var(--muted);margin-bottom:8px;}
-    .cert-body{font-size:13px;}
-    .cert-body p{margin-bottom:6px;}
-    @media (max-width:600px){nav{display:none;}main{padding:18px 14px 48px;}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <main>
-    <header>
-      <div class="logo"><a href="index.html">Arshdeep Singh</a></div>
-      <nav>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="education.html">Education</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
-    </header>
 
-    <h1 class="page-title">Certifications</h1>
-    <p class="page-subtitle">
-      Selected certificates and structured courses that support my work in product lifecycle, manufacturing
-      and data-driven decision-making.
+<body data-page="certifications">
+  <div class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><div class="brand-badge"></div><div class="brand-name">ARSHDEEP SINGH</div></a>
+      <button id="navToggle" class="btn nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav id="siteNav" class="nav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="projects" href="projects.html">Projects</a>
+        <a data-nav="experience" href="experience.html">Experience</a>
+        <a data-nav="education" href="education.html">Education</a>
+        <a data-nav="certifications" href="certifications.html">Certifications</a>
+        <a data-nav="downloads" href="downloads.html">Downloads</a>
+        <a data-nav="contact" href="index.html#contact">Contact</a>
+      </nav>
+      <div class="header-actions"><a class="btn btn-primary" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a></div>
+    </div>
+  </div>
+
+  <main class="container">
+    <h1 class="h1" style="margin-top:14px;">Certifications</h1>
+    <p class="subtitle">
+      Add your certificates as PDFs in <code>assets/files/</code> and link them below so visitors can download.
     </p>
 
-    <div class="cert-grid">
-      <article class="cert-card">
-        <h2 class="cert-title">SAP PLM in SAP S/4HANA – Project and Product Lifecycle Management</h2>
-        <div class="cert-meta">openSAP · Record of Achievement</div>
-        <div class="cert-body">
-          <p>
-            Completed the openSAP course on SAP PLM in SAP S/4HANA, covering how engineering, change management and
-            product structures are integrated into end-to-end processes.
-          </p>
-          <p>
-            Built an understanding of how product data, BOMs and change workflows can be managed across departments and
-            used for decision-making in complex organisations.
-          </p>
+    <div class="simple-grid">
+      <div class="file-card">
+        <div class="file-title">openSAP – PLM2.1 (Record of Achievement)</div>
+        <div class="file-meta">SAP Product Lifecycle Management course completion</div>
+        <div class="file-actions">
+          <a class="btn btn-primary" href="assets/files/plm2-1_RecordOfAchievement.pdf" download>Download PDF</a>
+          <span class="badge">SAP</span>
         </div>
-      </article>
+      </div>
 
-      <article class="cert-card">
-        <h2 class="cert-title">SAP S/4HANA Manufacturing for Production Engineering & Operations</h2>
-        <div class="cert-meta">openSAP · Confirmation of Participation</div>
-        <div class="cert-body">
-          <p>
-            Participated in the openSAP course on S/4HANA Manufacturing, focusing on production engineering and
-            operations, routings, work centres and shop-floor integration.
-          </p>
-          <p>
-            Learned how master data and transactional data flow through manufacturing processes and how KPIs can be
-            tracked within SAP-based environments.
-          </p>
+      <div class="file-card">
+        <div class="file-title">openSAP – S/4HANA (Confirmation of Participation)</div>
+        <div class="file-meta">S/4HANA-related course participation</div>
+        <div class="file-actions">
+          <a class="btn btn-primary" href="assets/files/s4h32_ConfirmationOfParticipation.pdf" download>Download PDF</a>
+          <span class="badge">SAP</span>
         </div>
-      </article>
+      </div>
+
+      <div class="file-card">
+        <div class="file-title">openSAP – Generative AI at SAP</div>
+        <div class="file-meta">Participation certificate (upload the PDF and link it)</div>
+        <div class="file-actions">
+          <a class="btn btn-primary" href="assets/files/generative-ai-at-sap.pdf" download>Download PDF</a>
+          <span class="badge">AI</span>
+        </div>
+      </div>
+
+      <div class="file-card">
+        <div class="file-title">Add more certificates</div>
+        <div class="file-meta">Copy a card, change title + file link.</div>
+        <div class="file-actions">
+          <span class="badge">Tip</span>
+          <span class="badge">assets/files/</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Arshdeep Singh</div>
+      <div>Certifications page • Downloadable PDFs</div>
     </div>
   </main>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
