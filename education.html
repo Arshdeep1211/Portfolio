@@ -4,92 +4,89 @@
   <meta charset="UTF-8" />
   <title>Education – Arshdeep Singh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg:#060810; --bg-alt:#0b0f1a; --card:#111726;
-      --text:#f9fafb; --muted:#9ca3af; --border:#1f2937;
-      --radius-lg:18px; --max-width:1100px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#111827 0,#020617 60%);
-      color:var(--text);line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none;}
-    main{max-width:var(--max-width);margin:0 auto;padding:24px 16px 64px;}
-    header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;}
-    .logo{font-weight:600;letter-spacing:0.06em;font-size:13px;text-transform:uppercase;color:var(--muted);}
-    nav{display:flex;gap:16px;font-size:13px;color:var(--muted);}
-    nav a{padding:4px 8px;border-radius:999px;}
-    nav a:hover{background:rgba(148,163,184,0.12);color:#e5e7eb;}
-    .cta-link{border-radius:999px;padding:6px 12px;border:1px solid rgba(148,163,184,0.4);font-size:12px;}
-    .page-title{font-size:22px;font-weight:650;margin-bottom:4px;}
-    .page-subtitle{font-size:13px;color:var(--muted);margin-bottom:16px;max-width:620px;}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
-    .card{background:var(--card);border-radius:var(--radius-lg);border:1px solid var(--border);padding:14px;}
-    .card-title{font-size:15px;font-weight:600;margin-bottom:4px;}
-    .card-meta{font-size:12px;color:var(--muted);margin-bottom:8px;}
-    .card p{font-size:13px;margin-bottom:6px;}
-    .subheading{font-size:13px;color:var(--muted);margin:18px 0 6px;}
-    ul{font-size:13px;color:#e5e7eb;margin-left:18px;}
-    li{margin-bottom:4px;}
-    @media (max-width:600px){nav{display:none;}main{padding:18px 14px 48px;}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <main>
-    <header>
-      <div class="logo"><a href="index.html">Arshdeep Singh</a></div>
-      <nav>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="education.html">Education</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="index.html#contact">Contact</a>
+
+<body data-page="education">
+  <div class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><div class="brand-badge"></div><div class="brand-name">ARSHDEEP SINGH</div></a>
+      <button id="navToggle" class="btn nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav id="siteNav" class="nav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="projects" href="projects.html">Projects</a>
+        <a data-nav="experience" href="experience.html">Experience</a>
+        <a data-nav="education" href="education.html">Education</a>
+        <a data-nav="certifications" href="certifications.html">Certifications</a>
+        <a data-nav="downloads" href="downloads.html">Downloads</a>
+        <a data-nav="contact" href="index.html#contact">Contact</a>
       </nav>
-      <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
-    </header>
+      <div class="header-actions"><a class="btn btn-primary" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a></div>
+    </div>
+  </div>
 
-    <h1 class="page-title">Education</h1>
-    <p class="page-subtitle">
-      Formal degrees and selected academic work that shaped how I think about markets, technology and organisations.
-    </p>
+  <main class="container">
+    <h1 class="h1" style="margin-top:14px;">Education</h1>
+    <p class="subtitle">Clear and focused. Master’s thesis title included. Seminar removed (as you requested).</p>
 
-    <div class="cards">
-      <article class="card">
-        <h2 class="card-title">MSc Management</h2>
-        <div class="card-meta">Technical University of Munich · Germany</div>
-        <p>
-          Master’s degree with a focus on strategy, innovation and technology-driven business models, including
-          projects in mobility, deep-tech and creativity research.
-        </p>
-        <p>
-          Master’s thesis on the market introduction of advanced air mobility services, combining qualitative research,
-          quantitative indicators and strategic frameworks across three cities.
-        </p>
-      </article>
+    <div class="list">
+      <details class="card" open>
+        <summary>
+          <div>
+            <div class="sum-title">Master of Science in Management — Technical University of Munich (TUM)</div>
+            <div class="sum-meta">Completed · Germany</div>
+          </div>
+          <div class="sum-icon">−</div>
+        </summary>
+        <div class="card-body">
+          <p>
+            Focus on technology-driven business models, strategy and innovation. Strong emphasis on translating complex technical domains
+            into structured market and business decisions.
+          </p>
 
-      <article class="card">
-        <h2 class="card-title">BEng Mechanical Engineering</h2>
-        <div class="card-meta">Chandigarh University · India</div>
-        <p>
-          Bachelor’s degree in Mechanical Engineering covering manufacturing systems, thermodynamics, mechanics and
-          engineering design.
-        </p>
-        <p>
-          Built a technical foundation that helps when working on complex physical products and infrastructure topics.
-        </p>
-      </article>
+          <h4>Master’s Thesis</h4>
+          <p style="color:var(--text); font-weight:800; margin-bottom:6px;">
+            Holistic Approach for the Market Introduction of Advanced Air Mobility (AAM):
+            Market Segmentation and Entry Strategies for eVTOL Use Cases in Cape Town, Dubai and Johannesburg
+          </p>
+          <ul>
+            <li>Developed a holistic framework for market entry across multiple AAM use cases.</li>
+            <li>Performed segmentation and prioritisation using qualitative and quantitative criteria.</li>
+            <li>Translated results into actionable entry strategies and stakeholder implications.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="card">
+        <summary>
+          <div>
+            <div class="sum-title">Bachelor of Engineering in Mechanical Engineering — Chandigarh University</div>
+            <div class="sum-meta">Completed · India</div>
+          </div>
+          <div class="sum-icon">+</div>
+        </summary>
+        <div class="card-body">
+          <p>
+            Engineering foundation in mechanics and systems, later combined with management and market-focused work in deep-tech domains.
+          </p>
+        </div>
+      </details>
     </div>
 
-    <div>
-      <h3 class="subheading">Selected seminars & academic projects</h3>
-      <ul>
-        <li><strong>Sustainable Behaviour Nudge Experiment</strong> – designed and analysed an experiment on how different sustainability messages influence food choices.</li>
-        <li><strong>Creativity & Startup Simulation Program</strong> – facilitated SCAMPER and effectuation-based ideation and startup simulation sessions.</li>
-      </ul>
+    <div class="footer">
+      <div>© <span id="y"></span> Arshdeep Singh</div>
+      <div>Education page • Click-to-expand</div>
     </div>
   </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll("details.card").forEach(d=>{
+      const icon=d.querySelector(".sum-icon");
+      const update=()=>icon.textContent=d.open?"−":"+";
+      d.addEventListener("toggle",update); update();
+    });
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
