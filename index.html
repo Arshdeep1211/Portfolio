@@ -2,256 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Arshdeep Singh – Freelance Research, Strategy & Marketing</title>
+  <title>Arshdeep Singh – Strategy, Market Research & Marketing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Freelance consultant for market research, business cases, GTM strategy and digital marketing. Portfolio and downloads." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Arshdeep Singh – freelance consultant for market research, business cases, go-to-market strategy and digital marketing." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+<body>
 
-<body data-page="home">
-  <!-- Header -->
-  <div class="header">
+  <!-- Sticky Header -->
+  <header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <div class="brand-badge"></div>
-        <div class="brand-name">ARSHDEEP SINGH</div>
-      </a>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="logo"><a href="index.html">ARSHDEEP SINGH</a></div>
+      </div>
 
-      <button id="navToggle" class="btn nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <button id="navToggle" class="btn-ghost" type="button" aria-label="Open menu">
+        Menu
+      </button>
 
-      <nav id="siteNav" class="nav" aria-label="Primary">
-        <a data-nav="home" href="index.html">Home</a>
-        <a data-nav="projects" href="projects.html">Projects</a>
-        <a data-nav="experience" href="experience.html">Experience</a>
-        <a data-nav="education" href="education.html">Education</a>
-        <a data-nav="certifications" href="certifications.html">Certifications</a>
-        <a data-nav="downloads" href="downloads.html">Downloads</a>
-        <a data-nav="contact" href="#contact">Contact</a>
+      <nav id="siteNav">
+        <a class="active" href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <a class="btn btn-primary" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
-      </div>
+      <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
     </div>
-  </div>
+  </header>
 
-  <main class="container">
-    <div class="kicker"><span class="kicker-dot"></span> Open for freelance projects</div>
-    <h1 class="h1">Market research, business cases & go-to-market support for tech teams.</h1>
-    <p class="subtitle">
-      I help founders and product teams <strong>understand their market</strong>, build <strong>decision-grade business cases</strong>,
-      and translate insights into <strong>clear slides, documents, and content</strong> that support your next move.
-    </p>
+  <main>
 
-    <!-- Hero -->
-    <section class="grid-hero">
-      <div class="panel hero-main">
-        <div class="pills">
-          <span class="pill">Market & competitive research</span>
-          <span class="pill">Excel business case modelling</span>
-          <span class="pill">Go-to-market & positioning</span>
-          <span class="pill">Digital & social media marketing</span>
-          <span class="pill">Deep-tech / mobility / space</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="kicker">
+            <span class="kicker-dot"></span>
+            Open for freelance projects
+          </div>
+
+          <h1 class="hero-title">Market research, business cases & go-to-market support for tech teams.</h1>
+
+          <p class="hero-subtitle">
+            I help founders and product teams understand markets, build decision-grade business cases,
+            and translate insights into clear slides, documents, and content that supports the next move.
+          </p>
+
+          <!-- keep pills SHORT (readable + premium) -->
+          <div class="pills" aria-label="Key focus areas">
+            <span class="pill">Market & competitive research</span>
+            <span class="pill">Business case & KPI modelling</span>
+            <span class="pill">Go-to-market & positioning</span>
+            <span class="pill">Digital & social media marketing</span>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn-primary" href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min" target="_blank" rel="noopener">
+              Book a free 15-min call
+            </a>
+            <a class="btn-ghost" href="projects.html">Browse projects</a>
+            <a class="btn-ghost" href="downloads.html">Download CV / Thesis</a>
+          </div>
+
+          <div class="hero-footnote">
+            Typical engagement: focused 2–8 week projects supporting strategy, investment, or product decisions.
+          </div>
         </div>
 
-        <div class="cta-row">
-          <!-- Replace YOUR-CALENDLY-USERNAME -->
-          <a class="btn btn-primary" target="_blank" rel="noopener"
-             href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min">
-            Book a free 15-min call
-          </a>
-          <a class="btn" href="projects.html">Browse projects</a>
-          <a class="btn" href="downloads.html">Download CV / Thesis</a>
-        </div>
+        <aside class="side-card">
+          <div class="profile-row">
+            <div class="profile-pic">
+              <!-- IMPORTANT: file name must match your repo -->
+              <img src="profile-a.jpg" alt="Profile picture of Arshdeep Singh" />
+            </div>
+            <div>
+              <div class="profile-name">Arshdeep Singh</div>
+              <div class="profile-role">Freelance consultant — research, strategy & marketing</div>
+            </div>
+          </div>
 
-        <div class="note">
-          Typical engagement: focused 2–8 week projects supporting strategy, investment, or product decisions.
-        </div>
+          <p class="side-text">
+            I work across <strong>market research</strong>, <strong>financial modelling</strong> and
+            <strong>go-to-market strategy</strong> — mainly with technology and deep-tech teams.
+            Based in Munich, working remotely across Europe.
+          </p>
+
+          <div class="side-links">
+            <div class="link-block">
+              <span>Email</span>
+              <a href="mailto:arshdeep.engg@gmail.com">arshdeep.engg@gmail.com</a>
+            </div>
+            <div class="link-block">
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/12arshdeep/" target="_blank" rel="noopener">linkedin.com/in/12arshdeep</a>
+            </div>
+            <div class="link-block">
+              <span>GitHub</span>
+              <a href="https://arshdeep1211.github.io/Portfolio/" target="_blank" rel="noopener">arshdeep1211.github.io/Portfolio</a>
+            </div>
+          </div>
+        </aside>
       </div>
-
-      <aside class="panel hero-side">
-        <div class="profile">
-          <div class="avatar">
-            <!-- put your image in /assets/img/profile.jpg or change path -->
-            <img src="assets/img/profile.jpg" alt="Profile picture of Arshdeep Singh">
-          </div>
-          <div>
-            <div class="profile-name">Arshdeep Singh</div>
-            <div class="profile-role">Freelance consultant – research, strategy & marketing</div>
-          </div>
-        </div>
-
-        <p class="meta">
-          I work across <strong>market research</strong>, <strong>financial modelling</strong>, and <strong>go-to-market strategy</strong> —
-          mainly with technology and deep-tech teams. Based in Munich, working remotely across Europe.
-        </p>
-
-        <div class="link-list">
-          <div class="link-item">
-            <small>Email</small>
-            <a href="mailto:arshdeep.engg@gmail.com">arshdeep.engg@gmail.com</a>
-          </div>
-          <div class="link-item">
-            <small>LinkedIn</small>
-            <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/12arshdeep/">linkedin.com/in/12arshdeep</a>
-          </div>
-          <div class="link-item">
-            <small>GitHub</small>
-            <a target="_blank" rel="noopener" href="https://arshdeep1211.github.io/Portfolio/">arshdeep1211.github.io/Portfolio</a>
-          </div>
-        </div>
-
-        <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;">
-          <span class="badge">Opportunity sizing</span>
-          <span class="badge">KPI dashboards</span>
-          <span class="badge">Product narratives</span>
-          <span class="badge">B2B strategy</span>
-        </div>
-      </aside>
     </section>
 
-    <!-- Services -->
-    <section class="section">
-      <div class="section-title">Services</div>
-      <div class="section-sub">Only the names here. Click any tile for details and deliverables.</div>
+    <div class="spacer-18"></div>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <div class="section-title">Services</div>
+          <div class="section-note">Only names + indicators. Click a tile for deliverables & process.</div>
+        </div>
+      </div>
 
       <div class="services-grid">
-        <div class="tile"
-             data-service="1"
+        <div class="service-tile"
              data-title="Market & Opportunity Research"
-             data-body="
-               <p>I structure the market into segments, size the opportunity, and map competitors.</p>
-               <ul>
-                 <li>TAM / SAM / SOM sizing with assumptions you can audit</li>
-                 <li>Segmentation + priority ranking of use cases / customer groups</li>
-                 <li>Competitive landscape + positioning gaps</li>
-                 <li>Deliverables: slide deck + research summary + sources</li>
-               </ul>
-               <div class='modal-foot'>
-                 <span class='badge'>TAM/SAM/SOM</span><span class='badge'>Segmentation</span><span class='badge'>Competitors</span>
-               </div>
-             ">
-          <div class="tile-top">
-            <div class="tile-title">Market & Opportunity Research</div>
-            <div class="indicators">
-              <span class="ind on"></span><span class="ind on"></span><span class="ind"></span>
-            </div>
+             data-body="What you get: segmentation, TAM/SAM/SOM sizing, competitive landscape, and a short decision deck (slides + notes) with clear recommendations. Ideal for: new markets, investor prep, product direction.">
+          <div class="service-name">Market & Opportunity Research</div>
+          <div class="indicators">
+            <span class="ind">TAM / SAM / SOM</span>
+            <span class="ind">Segmentation</span>
+            <span class="ind">Competitors</span>
           </div>
-          <div class="tile-hint">Sizing • Segmentation • Competitive mapping</div>
         </div>
 
-        <div class="tile"
-             data-service="1"
+        <div class="service-tile"
              data-title="Business Case & Financial Models"
-             data-body="
-               <p>Transparent Excel models where every assumption is visible and traceable.</p>
-               <ul>
-                 <li>Revenue model: pricing × adoption × usage</li>
-                 <li>Cost model: CAPEX/OPEX, staffing, operations</li>
-                 <li>Scenario analysis + KPI outputs (ROI, payback, margin)</li>
-                 <li>Deliverables: Excel + short walkthrough + summary slides</li>
-               </ul>
-               <div class='modal-foot'>
-                 <span class='badge'>Excel</span><span class='badge'>Scenarios</span><span class='badge'>ROI</span>
-               </div>
-             ">
-          <div class="tile-top">
-            <div class="tile-title">Business Case & Financial Models</div>
-            <div class="indicators">
-              <span class="ind on"></span><span class="ind on"></span><span class="ind on"></span>
-            </div>
+             data-body="What you get: transparent Excel model (assumptions → revenue/costs/KPIs), scenario analysis, and an executive summary slide. KPIs typically include revenue, margin, payback, ROI, sensitivity.">
+          <div class="service-name">Business Case & Financial Models</div>
+          <div class="indicators">
+            <span class="ind">Excel</span>
+            <span class="ind">Scenarios</span>
+            <span class="ind">KPIs</span>
           </div>
-          <div class="tile-hint">Modelling • Scenarios • KPIs</div>
         </div>
 
-        <div class="tile"
-             data-service="1"
+        <div class="service-tile"
              data-title="Go-to-Market Strategy"
-             data-body="
-               <p>Prioritise use cases, define value prop, and build a practical GTM roadmap.</p>
-               <ul>
-                 <li>ICP + personas + early adopter selection</li>
-                 <li>Value proposition + positioning statements</li>
-                 <li>Channel plan + partner strategy + rollout milestones</li>
-                 <li>Deliverables: GTM deck + action plan</li>
-               </ul>
-               <div class='modal-foot'>
-                 <span class='badge'>Positioning</span><span class='badge'>Personas</span><span class='badge'>Roadmap</span>
-               </div>
-             ">
-          <div class="tile-top">
-            <div class="tile-title">Go-to-Market Strategy</div>
-            <div class="indicators">
-              <span class="ind on"></span><span class="ind"></span><span class="ind"></span>
-            </div>
+             data-body="What you get: target segments, personas, positioning, channel plan, and a practical rollout roadmap (POCs, partnerships, messaging). Output usually: concise strategy deck + action plan.">
+          <div class="service-name">Go-to-Market Strategy</div>
+          <div class="indicators">
+            <span class="ind">Positioning</span>
+            <span class="ind">Personas</span>
+            <span class="ind">Roadmap</span>
           </div>
-          <div class="tile-hint">Positioning • Personas • Rollout</div>
         </div>
 
-        <div class="tile"
-             data-service="1"
+        <div class="service-tile"
              data-title="Digital & Social Media Marketing"
-             data-body="
-               <p>Content and campaigns that make your product story clear and credible.</p>
-               <ul>
-                 <li>Content strategy (LinkedIn focus) + posting plan</li>
-                 <li>Copywriting + structure for visuals</li>
-                 <li>Basic tracking & iteration loop (what works → do more)</li>
-                 <li>Deliverables: calendar + templates + examples</li>
-               </ul>
-               <div class='modal-foot'>
-                 <span class='badge'>LinkedIn</span><span class='badge'>Content</span><span class='badge'>Performance</span>
-               </div>
-             ">
-          <div class="tile-top">
-            <div class="tile-title">Digital & Social Media Marketing</div>
-            <div class="indicators">
-              <span class="ind on"></span><span class="ind on"></span><span class="ind"></span>
-            </div>
+             data-body="What you get: content strategy (especially LinkedIn), post structure, copy support, and a lightweight performance loop (what works → iterate). Good for founders and deep-tech teams who want credibility and inbound leads.">
+          <div class="service-name">Digital & Social Media Marketing</div>
+          <div class="indicators">
+            <span class="ind">LinkedIn</span>
+            <span class="ind">Content</span>
+            <span class="ind">Performance</span>
           </div>
-          <div class="tile-hint">Content • Campaigns • Performance</div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="section-title">Contact</div>
-      <div class="section-sub">Let’s start with a free 15-minute call to discuss your project.</div>
+    <div class="spacer-18"></div>
 
-      <div class="panel" style="padding:16px;">
-        <p class="subtitle" style="margin:0 0 12px;">
-          Tell me what you’re building and what decision you need to make. I’ll explain how I would approach it,
-          what the outputs look like, and we’ll see if it’s a fit.
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-head">
+        <div>
+          <div class="section-title">Let’s talk</div>
+          <div class="section-note">Free 15-minute call to understand your project and next steps.</div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <p>
+          If you’re planning a product, market entry, or campaign and want structured support with the research
+          and numbers behind it, we can start with a free 15-minute call. You share the context, I outline the
+          approach and deliverables, and we decide if it’s a fit.
         </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" target="_blank" rel="noopener"
-             href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min">
+        <div class="btn-row">
+          <a class="btn-primary" href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min" target="_blank" rel="noopener">
             Schedule 15-min call
           </a>
-          <a class="btn" href="mailto:arshdeep.engg@gmail.com">Or email your brief</a>
+          <a class="btn-ghost" href="mailto:arshdeep.engg@gmail.com">Or email your brief</a>
         </div>
       </div>
     </section>
 
-    <div class="footer">
-      <div>© <span id="y"></span> Arshdeep Singh</div>
-      <div>Built for clarity • Deep-tech theme • Mobile-friendly</div>
+    <!-- Modal -->
+    <div class="modal-overlay" id="serviceModal" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Service details">
+        <div class="modal-head">
+          <div class="modal-title" id="modalTitle">Service</div>
+          <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
     </div>
+
   </main>
 
-  <!-- Modal -->
-  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-label="Service details">
-      <div class="modal-head">
-        <div class="modal-title" id="modalTitle">Service</div>
-        <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
