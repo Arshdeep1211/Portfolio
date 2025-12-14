@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Downloads – Arshdeep Singh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-page="downloads">
+  <div class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><div class="brand-badge"></div><div class="brand-name">ARSHDEEP SINGH</div></a>
+      <button id="navToggle" class="btn nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav id="siteNav" class="nav">
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="projects" href="projects.html">Projects</a>
+        <a data-nav="experience" href="experience.html">Experience</a>
+        <a data-nav="education" href="education.html">Education</a>
+        <a data-nav="certifications" href="certifications.html">Certifications</a>
+        <a data-nav="downloads" href="downloads.html">Downloads</a>
+        <a data-nav="contact" href="index.html#contact">Contact</a>
+      </nav>
+      <div class="header-actions"><a class="btn btn-primary" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a></div>
+    </div>
+  </div>
+
+  <main class="container">
+    <h1 class="h1" style="margin-top:14px;">Downloads</h1>
+    <p class="subtitle">
+      Add files to <code>assets/files/</code>. Use this page for CV, thesis, papers, slides, etc.
+    </p>
+
+    <div class="simple-grid">
+      <div class="file-card">
+        <div class="file-title">CV</div>
+        <div class="file-meta">Latest resume (PDF)</div>
+        <div class="file-actions">
+          <a class="btn btn-primary" href="assets/files/Arshdeep_Singh_CV.pdf" download>Download</a>
+          <span class="badge">PDF</span>
+        </div>
+      </div>
+
+      <div class="file-card">
+        <div class="file-title">Master Thesis</div>
+        <div class="file-meta">Full thesis document (PDF)</div>
+        <div class="file-actions">
+          <a class="btn btn-primary" href="assets/files/Master_Thesis_Arshdeep_Singh.pdf" download>Download</a>
+          <span class="badge">PDF</span>
+        </div>
+      </div>
+
+      <div class="file-card">
+        <div class="file-title">Seminar / Project Paper</div>
+        <div class="file-meta">Optional: upload and link any academic paper (PDF)</div>
+        <div class="file-actions">
+          <a class="btn" href="assets/files/Seminar_Paper.pdf" download>Download</a>
+          <span class="badge">PDF</span>
+        </div>
+      </div>
+
+      <div class="file-card">
+        <div class="file-title">Slides / Pitch Deck</div>
+        <div class="file-meta">Upload a deck and link it here</div>
+        <div class="file-actions">
+          <a class="btn" href="assets/files/Portfolio_Slides.pdf" download>Download</a>
+          <span class="badge">Deck</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Arshdeep Singh</div>
+      <div>Downloads page • Add files to assets/files</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
