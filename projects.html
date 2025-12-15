@@ -4,73 +4,70 @@
   <meta charset="UTF-8" />
   <title>Projects – Arshdeep Singh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="name"><a href="index.html">ARSHDEEP SINGH</a></div>
+      </div>
 
-<body data-page="projects">
-  <div class="header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <div class="brand-badge"></div>
-        <div class="brand-name">ARSHDEEP SINGH</div>
-      </a>
+      <button class="btn hamburger" data-nav-toggle aria-expanded="false" aria-label="Open menu">Menu</button>
 
-      <button id="navToggle" class="btn nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
-
-      <nav id="siteNav" class="nav" aria-label="Primary">
-        <a data-nav="home" href="index.html">Home</a>
-        <a data-nav="projects" href="projects.html">Projects</a>
-        <a data-nav="experience" href="experience.html">Experience</a>
-        <a data-nav="education" href="education.html">Education</a>
-        <a data-nav="certifications" href="certifications.html">Certifications</a>
-        <a data-nav="downloads" href="downloads.html">Downloads</a>
-        <a data-nav="contact" href="index.html#contact">Contact</a>
+      <nav class="nav" data-nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <a class="btn btn-primary" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
+      <div class="header-right">
+        <a class="btn" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <main class="container">
-    <h1 class="h1" style="margin-top:14px;">Projects</h1>
-    <p class="subtitle">
-      Click a project to expand details. Add screenshots by placing images in <code>assets/img/</code>
-      and updating the <code>src</code> below.
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">
+      Click a project to expand details. Add screenshots by placing images in <strong>assets/img/</strong> and updating the image src.
     </p>
 
-    <div class="list">
-      <!-- Reiser 1 -->
-      <details class="card">
-        <summary>
+    <section class="list" data-accordion>
+
+      <!-- REISER 1 -->
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
           <div>
-            <div class="sum-title">AAM Training Concept & AFT Business Case — Reiser Simulation and Training</div>
-            <div class="sum-meta">Market research · Business case modelling · Product concept</div>
+            <div class="item-title">AAM Training Concept & AFT Business Case — Reiser Simulation and Training</div>
+            <div class="item-meta">Market research · Business case modelling · Product concept</div>
           </div>
-          <div class="sum-icon">+</div>
-        </summary>
-        <div class="card-body">
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+
+        <div class="item-content" data-acc-content>
           <p>
-            Built a concept and early business case for an <strong>Advanced Air Mobility Familiarisation Trainer (AFT)</strong> —
-            a VR-based product supporting stakeholder workshops, early training, and operational understanding.
+            Built the concept and early business case for an <strong>Advanced Air Mobility Familiarisation Trainer (AFT)</strong> —
+            a VR-based product to support stakeholder workshops, early training, and operational understanding of AAM.
           </p>
 
-          <h4>My role</h4>
-          <ul>
-            <li>Structured the market and stakeholders (cities, ANSPs, OEMs, operators, universities, training centers).</li>
-            <li>Defined use cases and packaged the training offer into sellable modules.</li>
-            <li>Built an Excel model linking adoption scenarios → training demand → revenue ranges.</li>
+          <div class="block-title">What I did</div>
+          <ul class="bullets">
+            <li>Structured the stakeholder landscape (cities, ANSPs, OEMs, operators, universities, training centres).</li>
+            <li>Defined use cases and packaged the training offer into sellable modules (workshops, familiarisation, public demos).</li>
+            <li>Built an Excel model linking adoption scenarios → training demand → revenue ranges (multi-year).</li>
           </ul>
 
-          <h4>Outputs</h4>
-          <ul>
-            <li>Stakeholder segmentation + early adopter target list (qualitative).</li>
-            <li>Demand / revenue model with conservative → optimistic scenarios (multi-year).</li>
-            <li>Product concept slides for internal alignment and next-step decisions.</li>
+          <div class="block-title">Outputs / KPIs (from available info)</div>
+          <ul class="bullets">
+            <li>Scenario model covering conservative → optimistic adoption views over a multi-year horizon.</li>
+            <li>Revenue range outputs and decision slides used for internal product discussions.</li>
           </ul>
 
-          <h4>Example screenshots</h4>
+          <div class="block-title">Screenshots</div>
           <div class="img-grid">
             <div class="img-card">
               <img src="assets/img/reiser-aft-slide-1.png" alt="AFT concept slide">
@@ -82,36 +79,37 @@
             </div>
           </div>
         </div>
-      </details>
+      </article>
 
-      <!-- Reiser 2 -->
-      <details class="card">
-        <summary>
+      <!-- REISER 2 -->
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
           <div>
-            <div class="sum-title">Business Jet Training Market Analysis — Reiser Simulation and Training</div>
-            <div class="sum-meta">Market intelligence · Fleet analysis · Training demand</div>
+            <div class="item-title">Business Jet Training Market Analysis — Reiser Simulation and Training</div>
+            <div class="item-meta">Market intelligence · Fleet analysis · Training demand</div>
           </div>
-          <div class="sum-icon">+</div>
-        </summary>
-        <div class="card-body">
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+
+        <div class="item-content" data-acc-content>
           <p>
             Analysed the business jet / turboprop training market to identify high-potential platforms for simulator and training solutions.
           </p>
 
-          <h4>What I did</h4>
-          <ul>
+          <div class="block-title">What I did</div>
+          <ul class="bullets">
             <li>Compiled fleet and operator data across segments (light → ultra-long range, turboprops).</li>
             <li>Mapped training competition (device providers, exclusivity, regional coverage).</li>
-            <li>Created a platform prioritisation logic (fleet size, growth, availability of training devices, competition intensity).</li>
+            <li>Built a prioritisation logic (fleet size, regional clusters, competition intensity, training availability).</li>
           </ul>
 
-          <h4>Outcome</h4>
-          <ul>
-            <li>Shortlist of target types + rationale for sales / product focus discussions.</li>
-            <li>Structured market table usable for continuous market intelligence updates.</li>
+          <div class="block-title">KPIs (from your dataset)</div>
+          <ul class="bullets">
+            <li>Structured data table covering <strong>25+ aircraft types</strong> across jet segments + turboprops.</li>
+            <li>Included global fleet totals and regional estimates (Europe / Middle East) where available.</li>
           </ul>
 
-          <h4>Example screenshots</h4>
+          <div class="block-title">Screenshots</div>
           <div class="img-grid">
             <div class="img-card">
               <img src="assets/img/reiser-bizjets-table.png" alt="Business jet market table screenshot">
@@ -119,154 +117,147 @@
             </div>
             <div class="img-card">
               <img src="assets/img/reiser-bizjets-slide.png" alt="Business jet summary slide">
-              <div class="img-cap">Summary: recommended priority platforms and market logic.</div>
+              <div class="img-cap">Summary: priority platforms and market logic.</div>
             </div>
           </div>
         </div>
-      </details>
+      </article>
 
-      <!-- Reiser 3 -->
-      <details class="card">
-        <summary>
+      <!-- REISER 3 -->
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
           <div>
-            <div class="sum-title">Maintenance Training Schools Mapping — Reiser Simulation and Training</div>
-            <div class="sum-meta">Market mapping · Lead generation · EASA Part-147</div>
+            <div class="item-title">Maintenance Training Schools Mapping — Reiser Simulation and Training</div>
+            <div class="item-meta">Market mapping · Lead generation · EASA Part-147</div>
           </div>
-          <div class="sum-icon">+</div>
-        </summary>
-        <div class="card-body">
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+
+        <div class="item-content" data-acc-content>
           <p>
-            Mapped European maintenance training organisations (Part-147) with details on approvals, aircraft focus and (where available) training scale.
+            Mapped European maintenance training organisations (Part-147) including approvals, aircraft focus and (where available) training scale.
           </p>
 
-          <h4>Scope</h4>
-          <ul>
-            <li>Countries prioritised (e.g., France, UK, Italy, Spain, Nordics, Eastern Europe).</li>
-            <li>Captured approvals/categories (CAT A, B1, B2), fixed wing vs rotary wing, training means, websites.</li>
+          <div class="block-title">What I did</div>
+          <ul class="bullets">
+            <li>Collected organisations across priority countries (France, UK, Italy, Spain, Nordics, Eastern Europe, etc.).</li>
+            <li>Captured approvals/categories (CAT A, B1, B2), fixed vs rotary wing, training means, websites.</li>
+            <li>Consolidated multiple sources (registers, PDFs, industry lists) into one usable market sheet.</li>
           </ul>
 
-          <h4>Output</h4>
-          <ul>
-            <li>Structured list for outreach / partnership exploration and internal market sizing.</li>
-            <li>Quick view of “where a simulator fits” into current training setups.</li>
+          <div class="block-title">KPIs</div>
+          <ul class="bullets">
+            <li>Consolidated list of <strong>70+ organisations</strong> across sources in your material.</li>
           </ul>
 
-          <h4>Example screenshot</h4>
+          <div class="block-title">Screenshots</div>
           <div class="img-grid">
             <div class="img-card">
               <img src="assets/img/reiser-maint-table.png" alt="Maintenance schools table screenshot">
-              <div class="img-cap">Consolidated list of Part-147 training organisations and attributes.</div>
+              <div class="img-cap">Consolidated Part-147 training organisations and attributes.</div>
             </div>
           </div>
         </div>
-      </details>
+      </article>
 
-      <!-- Reiser 4 -->
-      <details class="card">
-        <summary>
+      <!-- REISER 4 -->
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
           <div>
-            <div class="sum-title">Helicopter Hoist Training Providers Benchmark — Reiser Simulation and Training</div>
-            <div class="sum-meta">Competitive benchmark · SAR & hoist training</div>
+            <div class="item-title">Helicopter Hoist Training Providers Benchmark — Reiser Simulation and Training</div>
+            <div class="item-meta">Competitive benchmark · SAR & hoist training</div>
           </div>
-          <div class="sum-icon">+</div>
-        </summary>
-        <div class="card-body">
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+
+        <div class="item-content" data-acc-content>
           <p>
-            Benchmarked helicopter hoist and SAR training providers across regions to understand today’s training approach and
-            where simulation can reduce live-flight dependency.
+            Benchmarked helicopter hoist and SAR training providers across regions to understand today’s training approach
+            and where simulation can reduce live-flight dependency.
           </p>
 
-          <h4>What I analysed</h4>
-          <ul>
-            <li>Providers, certification/approval, training duration and structure (classroom/sim/live).</li>
-            <li>Regional coverage (Europe, Nordics, USA, Middle East) and typical training modules.</li>
+          <div class="block-title">What I analysed</div>
+          <ul class="bullets">
+            <li>Providers, approvals/certification, duration, and mix (classroom / sim / live flight).</li>
+            <li>Regional coverage: Europe, Nordics, USA, Middle East.</li>
+            <li>Identified potential partnership targets and training gaps for simulation concepts.</li>
           </ul>
 
-          <h4>Outcome</h4>
-          <ul>
-            <li>Clear landscape view + potential partnership targets and product gaps.</li>
-          </ul>
-
-          <h4>Example screenshot</h4>
+          <div class="block-title">Screenshots</div>
           <div class="img-grid">
             <div class="img-card">
-              <img src="assets/img/reiser-hoist-table.png" alt="Helicopter hoist provider table screenshot">
+              <img src="assets/img/reiser-hoist-table.png" alt="Hoist provider table screenshot">
               <div class="img-cap">Provider overview: approvals and training approach.</div>
             </div>
           </div>
         </div>
-      </details>
+      </article>
 
       <!-- AMIUS -->
-      <details class="card">
-        <summary>
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
           <div>
-            <div class="sum-title">Urban Air Mobility Simulation (AMIUS) — TUM Chair of Traffic Engineering</div>
-            <div class="sum-meta">Research assistant · Aimsun Next · U-space / UAM integration</div>
+            <div class="item-title">Urban Air Mobility Simulation (AMIUS) — TUM Chair of Traffic Engineering</div>
+            <div class="item-meta">Research assistant · Aimsun Next · U-Space / UAM integration</div>
           </div>
-          <div class="sum-icon">+</div>
-        </summary>
-        <div class="card-body">
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+
+        <div class="item-content" data-acc-content>
           <p>
             Contributed to AMIUS, a collaborative initiative exploring integrated U-Space and the integration of drone/VTOL UAM services
             into multimodal traffic simulation in Bavaria.
           </p>
 
-          <h4>My work</h4>
-          <ul>
+          <div class="block-title">My work</div>
+          <ul class="bullets">
             <li>Simulated integration of VTOL and drone-based UAM services using <strong>Aimsun Next</strong>.</li>
             <li>Modelled vertiport networks, air corridors and intermodal hubs as scenario inputs.</li>
             <li>Analysed KPIs: delay time, harmonic speed, traffic flow and RGap% across scenarios.</li>
           </ul>
 
-          <h4>Outcome</h4>
-          <ul>
+          <div class="block-title">Outcome</div>
+          <ul class="bullets">
             <li>Scenario comparison insights supporting infrastructure planning and policy recommendations.</li>
           </ul>
 
-          <h4>Example screenshots</h4>
+          <div class="block-title">Screenshots</div>
           <div class="img-grid">
             <div class="img-card">
               <img src="assets/img/amius-network.png" alt="AMIUS network screenshot">
               <div class="img-cap">UAM corridors and vertiport nodes inside simulation.</div>
             </div>
             <div class="img-card">
-              <img src="assets/img/amius-kpi-slide.png" alt="AMIUS KPI slide screenshot">
+              <img src="assets/img/amius-kpis.png" alt="AMIUS KPI slide screenshot">
               <div class="img-cap">KPI comparisons (delay, speed, flow, RGap%) across scenarios.</div>
             </div>
           </div>
         </div>
-      </details>
+      </article>
 
-      <!-- Quantum Diamonds -->
-      <details class="card">
-        <summary>
+      <!-- QUANTUM DIAMONDS -->
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
           <div>
-            <div class="sum-title">Quantum Sensor Market Study — Quantum Diamonds</div>
-            <div class="sum-meta">Market research · GTM roadmap · Customer personas</div>
+            <div class="item-title">Quantum Sensor Market Study — Quantum Diamonds</div>
+            <div class="item-meta">Market research · GTM roadmap · Customer personas</div>
           </div>
-          <div class="sum-icon">+</div>
-        </summary>
-        <div class="card-body">
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+
+        <div class="item-content" data-acc-content>
           <p>
-            Evaluated application sectors for diamond-based quantum sensors, filtered feasibility, and built early go-to-market direction.
+            Evaluated application sectors for diamond-based quantum sensors, filtered feasibility, and shaped early go-to-market direction.
           </p>
 
-          <h4>What I did</h4>
-          <ul>
-            <li>Evaluated <strong>5+ market sectors</strong> and performed feasibility filtering.</li>
+          <div class="block-title">What I did</div>
+          <ul class="bullets">
+            <li>Evaluated <strong>5+ application sectors</strong> and performed feasibility filtering.</li>
             <li>Built customer personas and early adopter hypotheses.</li>
-            <li>Designed GTM roadmap inputs + investor pitch support.</li>
+            <li>Designed GTM roadmap inputs and supported investor pitch narrative.</li>
           </ul>
 
-          <h4>Outputs</h4>
-          <ul>
-            <li>Use-case prioritisation + reasoning.</li>
-            <li>Lean Canvas for a focus use case (e.g., semiconductor quality control).</li>
-            <li>Slides for investor narrative and market sizing logic.</li>
-          </ul>
-
-          <h4>Example screenshots</h4>
+          <div class="block-title">Screenshots</div>
           <div class="img-grid">
             <div class="img-card">
               <img src="assets/img/qd-usecases.png" alt="Quantum Diamonds use cases screenshot">
@@ -278,25 +269,10 @@
             </div>
           </div>
         </div>
-      </details>
-    </div>
+      </article>
 
-    <div class="footer">
-      <div>© <span id="y"></span> Arshdeep Singh</div>
-      <div>Projects page • Click-to-expand • High-contrast</div>
-    </div>
+    </section>
+
   </main>
-
-  <script src="script.js"></script>
-  <script>
-    // Replace plus icon with minus when open (visual only)
-    document.querySelectorAll("details.card").forEach(d => {
-      const icon = d.querySelector(".sum-icon");
-      const update = () => icon.textContent = d.open ? "−" : "+";
-      d.addEventListener("toggle", update);
-      update();
-    });
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
