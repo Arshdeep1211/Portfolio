@@ -1,3 +1,37 @@
+/* =========================
+   Fullscreen background
+   ========================= */
+
+#bg-slideshow {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  transition: opacity 1.2s ease-in-out, background-image 1.2s ease-in-out;
+}
+
+/* Dark overlay for readability */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 10, 20, 0.82),
+    rgba(5, 10, 20, 0.72),
+    rgba(5, 10, 20, 0.85)
+  );
+  z-index: -1;
+}
+
+/* Make sure all content stays above */
+main, header {
+  position: relative;
+  z-index: 1;
+}
+
+
 /* =========================================
    Arshdeep Portfolio — Deep Tech Theme
    Single, readable theme across all pages
