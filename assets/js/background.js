@@ -1,22 +1,30 @@
-const images = [
-  "img/bg1.jpg",
-  "img/bg2.jpg",
-  "img/bg3.jpg",
-  "img/bg4.jpg",
-  "img/bg5.jpg",
-  "img/bg6.jpeg"
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("bg-rotator");
+  if (!el) return;
 
-let index = 0;
-const hero = document.querySelector(".hero");
+  const images = [
+    "img/bg1.jpg",
+    "img/bg2.jpg",
+    "img/bg3.jpg",
+    "img/bg4.jpg",
+    "img/bg5.jpg",
+    "img/bg6.jpeg"
+  ];
 
-if (hero) {
-  hero.style.backgroundImage = `url('${images[0]}')`;
-  hero.style.backgroundSize = "cover";
-  hero.style.backgroundPosition = "center";
+  let i = 0;
+
+  const setBg = (src) => {
+    el.style.opacity = "0";
+    setTimeout(() => {
+      el.style.backgroundImage = `url('${src}')`;
+      el.style.opacity = "1";
+    }, 250);
+  };
+
+  setBg(images[0]);
 
   setInterval(() => {
-    index = (index + 1) % images.length;
-    hero.style.backgroundImage = `url('${images[index]}')`;
+    i = (i + 1) % images.length;
+    setBg(images[i]);
   }, 60000);
-}
+});
