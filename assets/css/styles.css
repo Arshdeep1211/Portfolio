@@ -682,3 +682,21 @@ h1{
   .grid-4{ grid-template-columns: 1fr; }
   .img-grid{ grid-template-columns: 1fr; }
 }
+#bg-rotator{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.8s ease;
+}
+
+/* dark overlay for readability */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(5,10,20,0.65);
+}
