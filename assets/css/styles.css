@@ -1,6 +1,24 @@
 /* =========================
    Fullscreen background
    ========================= */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.65); /* dark overlay */
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
 
 #bg-slideshow {
   position: fixed;
