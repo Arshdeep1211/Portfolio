@@ -4,78 +4,69 @@
   <meta charset="UTF-8" />
   <title>Certifications – Arshdeep Singh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
-
-<body data-page="certifications">
-  <div class="header">
-    <div class="header-inner">
-      <a class="brand" href="index.html"><div class="brand-badge"></div><div class="brand-name">ARSHDEEP SINGH</div></a>
-      <button id="navToggle" class="btn nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
-      <nav id="siteNav" class="nav">
-        <a data-nav="home" href="index.html">Home</a>
-        <a data-nav="projects" href="projects.html">Projects</a>
-        <a data-nav="experience" href="experience.html">Experience</a>
-        <a data-nav="education" href="education.html">Education</a>
-        <a data-nav="certifications" href="certifications.html">Certifications</a>
-        <a data-nav="downloads" href="downloads.html">Downloads</a>
-        <a data-nav="contact" href="index.html#contact">Contact</a>
-      </nav>
-      <div class="header-actions"><a class="btn btn-primary" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a></div>
-    </div>
-  </div>
-
+<body>
   <main class="container">
-    <h1 class="h1" style="margin-top:14px;">Certifications</h1>
-    <p class="subtitle">
-      Add your certificates as PDFs in <code>assets/files/</code> and link them below so visitors can download.
+    <header class="header">
+      <div class="brand">
+        <div class="name"><a href="index.html">ARSHDEEP SINGH</a></div>
+      </div>
+
+      <button class="btn hamburger" data-nav-toggle aria-expanded="false" aria-label="Open menu">Menu</button>
+
+      <nav class="nav" data-nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <a class="btn" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
+      </div>
+    </header>
+
+    <h1 class="page-title">Certifications</h1>
+    <p class="page-subtitle">
+      Upload your certificate PDFs into <strong>assets/files/</strong> (or the repo root) and update the links below so visitors can download them.
     </p>
 
-    <div class="simple-grid">
-      <div class="file-card">
-        <div class="file-title">openSAP – PLM2.1 (Record of Achievement)</div>
-        <div class="file-meta">SAP Product Lifecycle Management course completion</div>
-        <div class="file-actions">
-          <a class="btn btn-primary" href="assets/files/plm2-1_RecordOfAchievement.pdf" download>Download PDF</a>
-          <span class="badge">SAP</span>
-        </div>
-      </div>
+    <section class="list" data-accordion>
 
-      <div class="file-card">
-        <div class="file-title">openSAP – S/4HANA (Confirmation of Participation)</div>
-        <div class="file-meta">S/4HANA-related course participation</div>
-        <div class="file-actions">
-          <a class="btn btn-primary" href="assets/files/s4h32_ConfirmationOfParticipation.pdf" download>Download PDF</a>
-          <span class="badge">SAP</span>
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
+          <div>
+            <div class="item-title">openSAP — SAP PLM (Record of Achievement)</div>
+            <div class="item-meta">Downloadable certificate</div>
+          </div>
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+        <div class="item-content" data-acc-content>
+          <p>Certificate file link (replace with your uploaded path):</p>
+          <p><a class="btn btn-primary" href="assets/files/plm-record-of-achievement.pdf" download>Download certificate</a></p>
         </div>
-      </div>
+      </article>
 
-      <div class="file-card">
-        <div class="file-title">openSAP – Generative AI at SAP</div>
-        <div class="file-meta">Participation certificate (upload the PDF and link it)</div>
-        <div class="file-actions">
-          <a class="btn btn-primary" href="assets/files/generative-ai-at-sap.pdf" download>Download PDF</a>
-          <span class="badge">AI</span>
+      <article class="item" data-acc-item>
+        <button class="item-btn" data-acc-btn type="button">
+          <div>
+            <div class="item-title">openSAP — S/4HANA (Confirmation of Participation)</div>
+            <div class="item-meta">Downloadable certificate</div>
+          </div>
+          <div class="item-icon" data-acc-icon>+</div>
+        </button>
+        <div class="item-content" data-acc-content>
+          <p>Certificate file link (replace with your uploaded path):</p>
+          <p><a class="btn btn-primary" href="assets/files/s4hana-confirmation.pdf" download>Download certificate</a></p>
         </div>
-      </div>
+      </article>
 
-      <div class="file-card">
-        <div class="file-title">Add more certificates</div>
-        <div class="file-meta">Copy a card, change title + file link.</div>
-        <div class="file-actions">
-          <span class="badge">Tip</span>
-          <span class="badge">assets/files/</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>© <span id="y"></span> Arshdeep Singh</div>
-      <div>Certifications page • Downloadable PDFs</div>
-    </div>
+    </section>
   </main>
-
-  <script src="script.js"></script>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
