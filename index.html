@@ -2,131 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Arshdeep Singh – Strategy, Market Research & Marketing</title>
+  <title>Arshdeep Singh – Market Research, Strategy & Marketing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Arshdeep Singh – freelance consultant for market research, business cases, go-to-market strategy and digital marketing." />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
+  <main class="container">
 
-  <!-- Sticky Header -->
-  <header>
-    <div class="header-inner">
+    <header class="header">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="logo"><a href="index.html">ARSHDEEP SINGH</a></div>
+        <div class="name"><a href="index.html">ARSHDEEP SINGH</a></div>
       </div>
 
-      <button id="navToggle" class="btn-ghost" type="button" aria-label="Open menu">
+      <button class="btn hamburger" data-nav-toggle aria-expanded="false" aria-label="Open menu">
         Menu
       </button>
 
-      <nav id="siteNav">
-        <a class="active" href="index.html">Home</a>
+      <nav class="nav" data-nav>
+        <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="experience.html">Experience</a>
         <a href="education.html">Education</a>
         <a href="certifications.html">Certifications</a>
         <a href="downloads.html">Downloads</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
-      <a class="cta-link" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
-    </div>
-  </header>
-
-  <main>
+      <div class="header-right">
+        <a class="btn" href="mailto:arshdeep.engg@gmail.com">Email brief ↗</a>
+      </div>
+    </header>
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div class="kicker">
-            <span class="kicker-dot"></span>
-            Open for freelance projects
-          </div>
+      <!-- Put 1–3 images in assets/img and list them here -->
+      <div class="hero-bg" data-hero-bg data-images="assets/img/hero-1.jpg, assets/img/hero-2.jpg, assets/img/hero-3.jpg"></div>
 
-          <h1 class="hero-title">Market research, business cases & go-to-market support for tech teams.</h1>
-
-          <p class="hero-subtitle">
-            I help founders and product teams understand markets, build decision-grade business cases,
-            and translate insights into clear slides, documents, and content that supports the next move.
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="tag"><span class="dot"></span> Open for freelance projects</div>
+          <h1>Market research, business cases & go-to-market support for tech teams.</h1>
+          <p class="lead">
+            I help founders and product teams understand markets, build decision-grade business cases, and translate
+            insights into clear slides, documents, and content that supports the next move.
           </p>
 
-          <!-- keep pills SHORT (readable + premium) -->
-          <div class="pills" aria-label="Key focus areas">
-            <span class="pill">Market & competitive research</span>
-            <span class="pill">Business case & KPI modelling</span>
+          <div class="pills">
+            <span class="pill">Market & competitor research</span>
+            <span class="pill">Business cases & KPI modelling</span>
             <span class="pill">Go-to-market & positioning</span>
             <span class="pill">Digital & social media marketing</span>
           </div>
 
-          <div class="btn-row">
-            <a class="btn-primary" href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min" target="_blank" rel="noopener">
+          <div class="cta-row">
+            <!-- Replace with your Calendly -->
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min">
               Book a free 15-min call
             </a>
-            <a class="btn-ghost" href="projects.html">Browse projects</a>
-            <a class="btn-ghost" href="downloads.html">Download CV / Thesis</a>
+            <a class="btn" href="projects.html">Browse projects</a>
+            <a class="btn" href="downloads.html">Download CV / Thesis</a>
           </div>
 
-          <div class="hero-footnote">
-            Typical engagement: focused 2–8 week projects supporting strategy, investment, or product decisions.
-          </div>
+          <div class="note">Typical engagement: focused 2–8 week projects supporting strategy, investment, or product decisions.</div>
         </div>
 
-        <aside class="side-card">
-          <div class="profile-row">
-            <div class="profile-pic">
-              <!-- IMPORTANT: file name must match your repo -->
-              <img src="profile-a.jpg" alt="Profile picture of Arshdeep Singh" />
+        <aside class="hero-side">
+          <div class="profile">
+            <div class="avatar">
+              <!-- Put your image in repo root or assets/img -->
+              <img src="assets/img/profile.jpg" alt="Profile picture of Arshdeep Singh" />
             </div>
             <div>
-              <div class="profile-name">Arshdeep Singh</div>
-              <div class="profile-role">Freelance consultant — research, strategy & marketing</div>
+              <div class="title">Arshdeep Singh</div>
+              <div class="role">Freelance consultant — research, strategy & marketing</div>
             </div>
           </div>
 
           <p class="side-text">
-            I work across <strong>market research</strong>, <strong>financial modelling</strong> and
-            <strong>go-to-market strategy</strong> — mainly with technology and deep-tech teams.
+            I work across <strong>market research</strong>, <strong>financial modelling</strong> and <strong>go-to-market</strong>.
             Based in Munich, working remotely across Europe.
           </p>
 
-          <div class="side-links">
-            <div class="link-block">
+          <div class="meta">
+            <a href="mailto:arshdeep.engg@gmail.com">
               <span>Email</span>
-              <a href="mailto:arshdeep.engg@gmail.com">arshdeep.engg@gmail.com</a>
-            </div>
-            <div class="link-block">
+              arshdeep.engg@gmail.com
+            </a>
+            <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/12arshdeep/">
               <span>LinkedIn</span>
-              <a href="https://www.linkedin.com/in/12arshdeep/" target="_blank" rel="noopener">linkedin.com/in/12arshdeep</a>
-            </div>
-            <div class="link-block">
+              linkedin.com/in/12arshdeep
+            </a>
+            <a target="_blank" rel="noopener" href="https://github.com/arshdeep1211">
               <span>GitHub</span>
-              <a href="https://arshdeep1211.github.io/Portfolio/" target="_blank" rel="noopener">arshdeep1211.github.io/Portfolio</a>
-            </div>
+              github.com/arshdeep1211
+            </a>
           </div>
         </aside>
       </div>
     </section>
-
-    <div class="spacer-18"></div>
 
     <!-- SERVICES -->
     <section class="section" id="services">
       <div class="section-head">
         <div>
           <div class="section-title">Services</div>
-          <div class="section-note">Only names + indicators. Click a tile for deliverables & process.</div>
+          <div class="section-subtitle">Only names + indicators here. Click a tile for deliverables & process.</div>
         </div>
       </div>
 
-      <div class="services-grid">
-        <div class="service-tile"
+      <div class="grid-4">
+        <div class="tile" data-service
              data-title="Market & Opportunity Research"
-             data-body="What you get: segmentation, TAM/SAM/SOM sizing, competitive landscape, and a short decision deck (slides + notes) with clear recommendations. Ideal for: new markets, investor prep, product direction.">
-          <div class="service-name">Market & Opportunity Research</div>
+             data-body="
+              <p><strong>What you get</strong></p>
+              <ul>
+                <li>Segmentation (customers / use cases / regions) + prioritisation</li>
+                <li>TAM / SAM / SOM and a clear assumptions sheet</li>
+                <li>Competitor landscape + positioning whitespace</li>
+                <li>10–15 slide decision deck + sources</li>
+              </ul>
+              <p class='small'>Best for: new markets, investor research, category entry decisions.</p>
+             ">
+          <h3>Market & Opportunity Research</h3>
           <div class="indicators">
             <span class="ind">TAM / SAM / SOM</span>
             <span class="ind">Segmentation</span>
@@ -134,10 +134,19 @@
           </div>
         </div>
 
-        <div class="service-tile"
+        <div class="tile" data-service
              data-title="Business Case & Financial Models"
-             data-body="What you get: transparent Excel model (assumptions → revenue/costs/KPIs), scenario analysis, and an executive summary slide. KPIs typically include revenue, margin, payback, ROI, sensitivity.">
-          <div class="service-name">Business Case & Financial Models</div>
+             data-body="
+              <p><strong>What you get</strong></p>
+              <ul>
+                <li>Transparent Excel model (assumptions → outputs)</li>
+                <li>Scenario runs (base / upside / downside)</li>
+                <li>KPIs: revenue, margin, payback, ROI (as applicable)</li>
+                <li>Simple dashboard + handover so you can maintain it</li>
+              </ul>
+              <p class='small'>Best for: pricing, funding decisions, product profitability cases.</p>
+             ">
+          <h3>Business Case & Financial Models</h3>
           <div class="indicators">
             <span class="ind">Excel</span>
             <span class="ind">Scenarios</span>
@@ -145,10 +154,19 @@
           </div>
         </div>
 
-        <div class="service-tile"
+        <div class="tile" data-service
              data-title="Go-to-Market Strategy"
-             data-body="What you get: target segments, personas, positioning, channel plan, and a practical rollout roadmap (POCs, partnerships, messaging). Output usually: concise strategy deck + action plan.">
-          <div class="service-name">Go-to-Market Strategy</div>
+             data-body="
+              <p><strong>What you get</strong></p>
+              <ul>
+                <li>ICP + personas + early adopter hypotheses</li>
+                <li>Value proposition + messaging structure</li>
+                <li>Channel plan (partners, outbound, events, content)</li>
+                <li>90-day rollout roadmap with measurable milestones</li>
+              </ul>
+              <p class='small'>Best for: deep-tech/B2B, complex products, first traction.</p>
+             ">
+          <h3>Go-to-Market Strategy</h3>
           <div class="indicators">
             <span class="ind">Positioning</span>
             <span class="ind">Personas</span>
@@ -156,10 +174,19 @@
           </div>
         </div>
 
-        <div class="service-tile"
+        <div class="tile" data-service
              data-title="Digital & Social Media Marketing"
-             data-body="What you get: content strategy (especially LinkedIn), post structure, copy support, and a lightweight performance loop (what works → iterate). Good for founders and deep-tech teams who want credibility and inbound leads.">
-          <div class="service-name">Digital & Social Media Marketing</div>
+             data-body="
+              <p><strong>What you get</strong></p>
+              <ul>
+                <li>Content pillars + posting plan (often LinkedIn)</li>
+                <li>Copy frameworks + visual structure guidance</li>
+                <li>Light analytics: what worked / what to improve</li>
+                <li>Campaign support: announcements, launches, hiring</li>
+              </ul>
+              <p class='small'>Best for: founders, teams, initiatives building credibility & inbound.</p>
+             ">
+          <h3>Digital & Social Media Marketing</h3>
           <div class="indicators">
             <span class="ind">LinkedIn</span>
             <span class="ind">Content</span>
@@ -169,45 +196,46 @@
       </div>
     </section>
 
-    <div class="spacer-18"></div>
-
     <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="section-head">
         <div>
           <div class="section-title">Let’s talk</div>
-          <div class="section-note">Free 15-minute call to understand your project and next steps.</div>
+          <div class="section-subtitle">Free 15-minute call to understand your project and next steps.</div>
         </div>
       </div>
 
       <div class="contact-card">
-        <p>
-          If you’re planning a product, market entry, or campaign and want structured support with the research
-          and numbers behind it, we can start with a free 15-minute call. You share the context, I outline the
-          approach and deliverables, and we decide if it’s a fit.
-        </p>
-        <div class="btn-row">
-          <a class="btn-primary" href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min" target="_blank" rel="noopener">
+        <div>
+          <p>
+            Let’s do a free 15-minute call. You share the context and goals, I outline how I’d approach it and what
+            the deliverables would look like — then we decide if it’s a fit.
+          </p>
+          <div class="small" style="margin-top:8px;">
+            Based in Munich · Remote across Europe · Fast turnaround for focused research/modeling work
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://calendly.com/YOUR-CALENDLY-USERNAME/15min">
             Schedule 15-min call
           </a>
-          <a class="btn-ghost" href="mailto:arshdeep.engg@gmail.com">Or email your brief</a>
+          <a class="btn" href="mailto:arshdeep.engg@gmail.com">Or email your brief</a>
         </div>
       </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="serviceModal" aria-hidden="true">
+    <!-- MODAL (Services) -->
+    <div class="modal-overlay" data-modal-overlay>
       <div class="modal" role="dialog" aria-modal="true" aria-label="Service details">
         <div class="modal-head">
-          <div class="modal-title" id="modalTitle">Service</div>
-          <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+          <div class="modal-title" data-modal-title>Service</div>
+          <button class="modal-close" data-modal-close aria-label="Close">×</button>
         </div>
-        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-body" data-modal-body></div>
       </div>
     </div>
 
   </main>
-
-  <script src="assets/main.js"></script>
 </body>
 </html>
