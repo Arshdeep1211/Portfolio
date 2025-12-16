@@ -1,25 +1,45 @@
-const backgrounds = [
-  "assets/img/background/bg1.jpg",
-  "assets/img/background/bg2.jpg",
-  "assets/img/background/bg3.jpg",
-  "assets/img/background/bg4.jpg",
-  "assets/img/background/bg5.jpg",
-  "assets/img/background/bg6.jpeg"
-];
+(() => {
+  const backgrounds = [
+    "assets/img/background/bg1.jpg",
+    "assets/img/background/bg2.jpg",
+    "assets/img/background/bg3.jpg",
+    "assets/img/background/bg4.jpg",
+    "assets/img/background/bg5.jpg",
+    "assets/img/background/bg6.jpeg",
+  ];
 
-let current = 0;
-const bg = document.getElementById("bg-rotator");
+  // Create bg layer if missing
+  let bg = document.getElementById("bg-rotator");
+  if (!bg) {
+    bg = document.createElement("div");
+    bg.id = "bg-rotator";
+    document.body.prepend(bg);
+  }
 
-function changeBackground() {
-  if (!bg) return;
+  // Preload images (reduces flicker)
+  backgrounds.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
 
-  bg.style.opacity = "0";
-  setTimeout(() => {
-    bg.style.backgroundImage = `url('${backgrounds[current]}')`;
-    bg.style.opacity = "1";
-    current = (current + 1) % backgrounds.length;
-  }, 450);
-}
+  let i = 0;
 
-changeBackground();
-setInterval(changeBackground, 60000);
+  function setBg(nextSrc) {
+    // Fade out
+    bg.style.opacity = "0";
+    window.setTimeout(() => {
+      bg.style.backgroundImage = `url("${nextSrc}")`;
+      bg.style.opacity = "1";
+    }, 450);
+  }
+
+  // First paint
+  setBg(backgrounds[i]);
+  i = (i + 1) % backgrounds.length;
+
+  // Rotate every 60s
+  window.setInterval(() => {
+    setBg(backgrounds[i]);
+    i = (i + 1) % backgrounds.length;
+  }, 60000);
+})();
