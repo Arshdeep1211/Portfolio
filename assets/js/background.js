@@ -1,10 +1,10 @@
 const backgrounds = [
-  "assets/img/background/bg1.jpg",
-  "assets/img/background/bg2.jpg",
-  "assets/img/background/bg3.jpg",
-  "assets/img/background/bg4.jpg",
-  "assets/img/background/bg5.jpg",
-  "assets/img/background/bg6.jpg"
+  "assets/Img/background/bg1.jpg",
+  "assets/Img/background/bg2.jpg",
+  "assets/Img/background/bg3.jpg",
+  "assets/Img/background/bg4.jpg",
+  "assets/Img/background/bg5.jpg",
+  "assets/Img/background/bg6.jpeg"
 ];
 
 let current = 0;
@@ -22,4 +22,4 @@ function changeBackground() {
 }
 
 changeBackground();
-setInterval(changeBackground, 60000); // every 60 sec
+setInterval(changeBackground, 60000);
