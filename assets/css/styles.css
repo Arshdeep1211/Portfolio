@@ -2,6 +2,38 @@
    Fullscreen Background Slideshow (global)
    Works with assets/img/background/bg1.jpg ... bg6.jpeg
    ========================= */
+/* ===== Fullscreen background slideshow (READABLE) ===== */
+#bg-rotator{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.05);
+  opacity: 1;
+  transition: opacity 900ms ease;
+}
+
+/* Dark overlay so text is always readable */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(5,10,20,0.84),
+    rgba(5,10,20,0.68),
+    rgba(5,10,20,0.86)
+  );
+}
+
+/* IMPORTANT: don't let body background fight the slideshow */
+body{
+  background: #050A14;
+}
 
 /* Background image layer */
 #bg-rotator{
