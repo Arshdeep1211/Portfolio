@@ -8,17 +8,17 @@ const backgrounds = [
 ];
 
 let current = 0;
+const bg = document.getElementById("bg-rotator");
 
 function changeBackground() {
-  document.body.style.backgroundImage =
-    `linear-gradient(rgba(5,10,20,0.75), rgba(5,10,20,0.85)),
-     url('${backgrounds[current]}')`;
+  if (!bg) return;
 
-  document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundPosition = "center";
-  document.body.style.backgroundRepeat = "no-repeat";
-
-  current = (current + 1) % backgrounds.length;
+  bg.style.opacity = "0";
+  setTimeout(() => {
+    bg.style.backgroundImage = `url('${backgrounds[current]}')`;
+    bg.style.opacity = "1";
+    current = (current + 1) % backgrounds.length;
+  }, 450);
 }
 
 changeBackground();
