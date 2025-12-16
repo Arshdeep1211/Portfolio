@@ -1,8 +1,15 @@
 /* =========================
    Fullscreen Background Slideshow (global)
-   Works with assets/img/background/bg1.jpg ... bg6.jpeg
+   Uses: <div id="bg-rotator"></div>
+   Images: assets/img/background/bg1.jpg ... bg6.jpeg
    ========================= */
-/* ===== Fullscreen background slideshow (READABLE) ===== */
+
+body{
+  /* IMPORTANT: don’t set background-image here (JS controls it) */
+  background-color: #050A14;
+}
+
+/* Background image layer (behind everything) */
 #bg-rotator{
   position: fixed;
   inset: 0;
@@ -10,18 +17,24 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  /* small scale avoids edge gaps on some screens */
   transform: scale(1.02);
+
+  /* optional: make images pop a little */
   filter: saturate(1.05) contrast(1.05);
+
   opacity: 1;
   transition: opacity 900ms ease;
 }
 
-/* Dark overlay so text is always readable */
+/* Dark overlay for readability */
 body::before{
-  content:"";
+  content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
   background: linear-gradient(
     180deg,
     rgba(5,10,20,0.84),
@@ -30,47 +43,8 @@ body::before{
   );
 }
 
-/* IMPORTANT: don't let body background fight the slideshow */
-body{
-  background: #050A14;
-}
-
-/* Background image layer */
-#bg-rotator{
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1.02); /* avoids edge gaps on some screens */
-  transition: opacity 1.2s ease;
-}
-
-/* Dark overlay for readability (global) */
-body::before{
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(5,10,20,0.82),
-    rgba(5,10,20,0.70),
-    rgba(5,10,20,0.86)
-  );
-  pointer-events: none;
-}
-
-/* Make sure page content stays above */
+/* Ensure your content stays above the background */
 main, header, .container{
   position: relative;
   z-index: 1;
-}
-
-/* Hero should NOT add its own overlay now */
-.hero{
-  min-height: 100vh;
-  position: relative;
-  color: var(--text);
 }
