@@ -41,5 +41,5 @@
   window.setInterval(() => {
     setBg(backgrounds[i]);
     i = (i + 1) % backgrounds.length;
-  }, 30000);
+  }, 15000);
 })();
