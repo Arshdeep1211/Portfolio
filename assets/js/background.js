@@ -1,27 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const bg = document.getElementById("bg-rotator");
-  if (!bg) return;
+const backgrounds = [
+  "assets/img/background/bg1.jpg",
+  "assets/img/background/bg2.jpg",
+  "assets/img/background/bg3.jpg",
+  "assets/img/background/bg4.jpg",
+  "assets/img/background/bg5.jpg",
+  "assets/img/background/bg6.jpg"
+];
 
-  const images = [
-    "img/bg1.jpg",
-    "img/bg2.jpg",
-    "img/bg3.jpg",
-    "img/bg4.jpg",
-    "img/bg5.jpg",
-    "img/bg6.jpeg"
-  ];
+let current = 0;
 
-  let index = 0;
+function changeBackground() {
+  document.body.style.backgroundImage =
+    `linear-gradient(rgba(5,10,20,0.75), rgba(5,10,20,0.85)),
+     url('${backgrounds[current]}')`;
 
-  function changeBg() {
-    bg.style.opacity = "0";
-    setTimeout(() => {
-      bg.style.backgroundImage = `url('${images[index]}')`;
-      bg.style.opacity = "1";
-      index = (index + 1) % images.length;
-    }, 300);
-  }
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundRepeat = "no-repeat";
 
-  changeBg();
-  setInterval(changeBg, 60000); // 60 seconds
-});
+  current = (current + 1) % backgrounds.length;
+}
+
+changeBackground();
+setInterval(changeBackground, 60000); // every 60 sec
