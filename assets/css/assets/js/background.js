@@ -1,33 +1,45 @@
-const images = [
-  "assets/images/bg1.jpg",
-  "assets/images/bg2.jpg",
-  "assets/images/bg3.jpg",
-  "assets/images/bg4.jpg",
-  "assets/images/bg5.jpg",
-  "assets/images/bg6.jpg",
-  "assets/images/bg7.jpg",
-  "assets/images/bg8.jpg"
-];
+(() => {
+  const backgrounds = [
+    "assets/img/background/bg1.jpg",
+    "assets/img/background/bg2.jpg",
+    "assets/img/background/bg3.jpg",
+    "assets/img/background/bg4.jpg",
+    "assets/img/background/bg5.jpg",
+    "assets/img/background/bg6.jpeg"
+  ];
 
-let currentIndex = 0;
-const bg = document.getElementById("bg-slideshow");
+  const INTERVAL_MS = 60000; // 60s
+  const FADE_MS = 900;
 
-// preload images (important for smooth transitions)
-images.forEach(src => {
-  const img = new Image();
-  img.src = src;
-});
+  function preload(url) {
+    const img = new Image();
+    img.src = url;
+  }
 
-// set initial background
-bg.style.backgroundImage = `url('${images[0]}')`;
+  function start() {
+    const el = document.getElementById("bg-rotator");
+    if (!el) return;
 
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % images.length;
-  bg.style.opacity = 0;
+    // preload everything (helps avoid "no change")
+    backgrounds.forEach(preload);
 
-  setTimeout(() => {
-    bg.style.backgroundImage = `url('${images[currentIndex]}')`;
-    bg.style.opacity = 1;
-  }, 600);
+    let i = 0;
+    el.style.backgroundImage = `url("${backgrounds[i]}")`;
 
-}, 60000); // 60 seconds
+    setInterval(() => {
+      i = (i + 1) % backgrounds.length;
+
+      // fade out
+      el.style.opacity = "0";
+
+      setTimeout(() => {
+        // swap image
+        el.style.backgroundImage = `url("${backgrounds[i]}")`;
+        // fade in
+        el.style.opacity = "1";
+      }, FADE_MS);
+    }, INTERVAL_MS);
+  }
+
+  document.addEventListener("DOMContentLoaded", start);
+})();
