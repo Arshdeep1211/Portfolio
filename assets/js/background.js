@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const el = document.getElementById("bg-rotator");
-  if (!el) return;
+  const bg = document.getElementById("bg-rotator");
+  if (!bg) return;
 
   const images = [
     "img/bg1.jpg",
@@ -11,20 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
     "img/bg6.jpeg"
   ];
 
-  let i = 0;
+  let index = 0;
 
-  const setBg = (src) => {
-    el.style.opacity = "0";
+  function changeBg() {
+    bg.style.opacity = "0";
     setTimeout(() => {
-      el.style.backgroundImage = `url('${src}')`;
-      el.style.opacity = "1";
-    }, 250);
-  };
+      bg.style.backgroundImage = `url('${images[index]}')`;
+      bg.style.opacity = "1";
+      index = (index + 1) % images.length;
+    }, 300);
+  }
 
-  setBg(images[0]);
-
-  setInterval(() => {
-    i = (i + 1) % images.length;
-    setBg(images[i]);
-  }, 60000);
+  changeBg();
+  setInterval(changeBg, 60000); // 60 seconds
 });
