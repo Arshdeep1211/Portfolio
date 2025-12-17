@@ -669,4 +669,29 @@ h1{
     width: 100%;
   }
 }
+/* CSS-only mobile nav */
+#navcheck{
+  position: absolute;
+  left: -9999px;
+}
+
+@media (max-width: 560px){
+  .hamburger{ display:inline-flex; }
+
+  #siteNav{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  /* show nav when checkbox is checked */
+  #navcheck:checked ~ #siteNav{
+    display: flex;
+  }
+
+  #siteNav a{ width: 100%; }
+}
 
