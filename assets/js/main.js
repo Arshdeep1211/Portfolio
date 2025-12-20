@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
-    // Close menu after clicking a link (mobile)
     nav.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", () => {
         if (window.innerWidth <= 560) {
@@ -27,55 +26,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================
      SERVICES MODAL (Home)
-     Works with:
-       .tile[data-service] + data-title + data-body
-     And modal markup:
-       #serviceModal .modal-title .modal-body .modal-close
+     Supports BOTH markup versions:
+     - .modal-header OR .modal-head
+     - #serviceModal (overlay)
      ========================= */
-  const serviceModal = document.getElementById("serviceModal");
-  const serviceTitle = serviceModal ? serviceModal.querySelector(".modal-title") : null;
-  const serviceBody = serviceModal ? serviceModal.querySelector(".modal-body") : null;
-  const serviceClose = serviceModal ? serviceModal.querySelector(".modal-close") : null;
+  const overlay =
+    document.getElementById("serviceModal") ||
+    document.querySelector(".modal-overlay#serviceModal");
 
-  const openServiceModal = (title, bodyHtml) => {
-    if (!serviceModal || !serviceTitle || !serviceBody) return;
-    serviceTitle.textContent = title || "Service details";
-    serviceBody.innerHTML = bodyHtml || "";
-    serviceModal.style.display = "flex";
+  const titleEl =
+    overlay?.querySelector(".modal-title") ||
+    overlay?.querySelector("[data-modal-title]");
+
+  const bodyEl =
+    overlay?.querySelector(".modal-body") ||
+    overlay?.querySelector("[data-modal-body]");
+
+  const closeBtn =
+    overlay?.querySelector(".modal-close") ||
+    overlay?.querySelector("[data-modal-close]");
+
+  const openModal = (title, bodyHtml) => {
+    if (!overlay) return;
+
+    if (titleEl) titleEl.textContent = title || "Service details";
+    if (bodyEl) bodyEl.innerHTML = bodyHtml || "";
+
+    // make visible (works with either CSS approach)
+    overlay.style.display = "flex";
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden"; // prevent background scroll
   };
 
-  const closeServiceModal = () => {
-    if (!serviceModal) return;
-    serviceModal.style.display = "none";
+  const closeModal = () => {
+    if (!overlay) return;
+    overlay.classList.remove("open");
+    overlay.style.display = "none";
+    document.body.style.overflow = "";
   };
 
-  // Click tiles -> open modal
-  document.querySelectorAll("[data-service]").forEach((tile) => {
-    tile.addEventListener("click", () => {
-      const title = tile.getAttribute("data-title") || tile.querySelector("h3")?.textContent;
+  // Bind tiles
+  document.querySelectorAll(".tile[data-service], [data-service]").forEach((tile) => {
+    tile.addEventListener("click", (e) => {
+      e.preventDefault();
+      const title =
+        tile.getAttribute("data-title") ||
+        tile.querySelector("h3")?.textContent ||
+        "Service details";
       const body = tile.getAttribute("data-body") || "";
-      openServiceModal(title, body);
+      openModal(title, body);
     });
   });
 
-  // Close handlers
-  if (serviceClose) serviceClose.addEventListener("click", closeServiceModal);
-  if (serviceModal) {
-    serviceModal.addEventListener("click", (e) => {
-      if (e.target === serviceModal) closeServiceModal();
+  // Close modal actions
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+  if (overlay) {
+    overlay.addEventListener("click", (e) => {
+      // click outside the modal box closes
+      if (e.target === overlay) closeModal();
     });
   }
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeServiceModal();
+    if (e.key === "Escape") closeModal();
   });
 
   /* =========================
      ACCORDION STYLE A
-     Works with:
-       .item
-         button.item-btn
-         .item-content
-         .item-icon
+     .item + .item-btn + .item-content + .item-icon
      ========================= */
   const itemsA = Array.from(document.querySelectorAll(".item"));
   itemsA.forEach((item) => {
@@ -90,12 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // close others
       itemsA.forEach((other) => {
         if (other === item) return;
-        const c = other.querySelector(".item-content");
+        other.querySelector(".item-content")?.classList.remove("open");
         const i = other.querySelector(".item-icon");
-        if (c) c.classList.remove("open");
         if (i) i.textContent = "+";
       });
 
@@ -105,12 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     ACCORDION STYLE B (Projects page old layout)
-     Works with:
-       .project-item
-         button.project-toggle
-         .project-content
-         .project-toggle-icon
+     ACCORDION STYLE B
+     .project-item + .project-toggle + .project-content + .project-toggle-icon
      ========================= */
   const itemsB = Array.from(document.querySelectorAll(".project-item"));
   itemsB.forEach((item) => {
@@ -125,12 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // close others
       itemsB.forEach((other) => {
         if (other === item) return;
-        const c = other.querySelector(".project-content");
+        other.querySelector(".project-content")?.classList.remove("open");
         const i = other.querySelector(".project-toggle-icon");
-        if (c) c.classList.remove("open");
         if (i) i.textContent = "+";
       });
 
