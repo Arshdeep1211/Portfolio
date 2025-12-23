@@ -150,3 +150,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/* =========================
+   LIGHTBOX for screenshot images
+   Click any .img-card img to open
+   ========================= */
+const lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  const lbImg = lightbox.querySelector(".lightbox__img");
+  const lbCap = lightbox.querySelector(".lightbox__cap");
+  const lbClose = lightbox.querySelector(".lightbox__close");
+
+  function openLightbox(src, caption, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || "Screenshot";
+    lbCap.textContent = caption || "";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lb-lock");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lb-lock");
+
+    // avoid showing old image during next open
+    lbImg.src = "";
+    lbImg.alt = "";
+    lbCap.textContent = "";
+  }
+
+  // Open when clicking a screenshot
+  document.querySelectorAll(".img-card img").forEach((img) => {
+    img.addEventListener("click", () => {
+      const card = img.closest(".img-card");
+      const capEl = card ? card.querySelector(".img-cap") : null;
+      const caption = capEl ? capEl.textContent.trim() : "";
+      openLightbox(img.src, caption, img.alt);
+    });
+  });
+
+  // Close button
+  lbClose.addEventListener("click", closeLightbox);
+
+  // Click outside image closes
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // ESC closes
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("open")) {
+      closeLightbox();
+    }
+  });
+}
