@@ -848,5 +848,20 @@ body.lb-lock{
   gap: 10px;
   margin-top: 14px;
 }
+.ai-float{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  border-radius: 999px;
+  padding: 12px 14px;
+  border: 1px solid rgba(124,92,255,.45);
+  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.55));
+  color: var(--text);
+  font-weight: 800;
+  box-shadow: 0 14px 36px rgba(124,92,255,.25);
+  text-decoration:none;
+}
+.ai-float:hover{ text-decoration:none; transform: translateY(-1px); }
 
 
