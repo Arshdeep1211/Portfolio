@@ -87,7 +87,7 @@
         <a href="projects.html" class="btn">Browse projects</a>
 
         <!-- Your AI recommender modal trigger -->
-        <a href="#" class="btn" data-open-ai>Find my best service</a>
+       <a href="#" class="btn btn-primary" data-open-ai>Launch Strategy Copilot (AI)</a>
 
         <a class="btn" target="_blank" rel="noopener" href="https://calendly.com/arshdeep-/30min">
           Book a call
@@ -125,45 +125,51 @@
           <span>LinkedIn</span>
           linkedin.com/in/12arshdeep
         </a>
-
-        <a href="#services">
-          <span>Start here</span>
-          Explore services ↓
-        </a>
       </div>
     </div>
   </div>
 </section>
+    
+</section>
 
-  <!-- SERVICES -->
-    <!-- AI SECTION -->
+<!-- AI SECTION (ADD THIS WHOLE BLOCK) -->
 <section class="section" id="ai">
   <div class="section-head">
     <div>
-      <div class="section-title">AI</div>
-      <div class="section-subtitle">
-        Practical AI that improves marketing performance and removes manual work — without “AI buzzwords”.
-      </div>
+      <div class="section-title">Strategy Copilot (AI)</div>
     </div>
   </div>
 
-  <div class="contact-card">
-    <div>
-      <p>
-        I build small AI workflows that make a big difference: faster reporting, smarter content planning, lead follow-ups,
-        and simple automations that connect your website → email → CRM.
-      </p>
-      <div class="small" style="margin-top:8px;">
-        Examples: AI KPI summaries · SEO topic planner · lead qualification assistant · automated outreach follow-ups
-      </div>
-    </div>
+  <div class="ai-card">
+    <p class="lead">
+      Practical AI that improves marketing performance and removes manual work —
+      no buzzwords, just measurable impact.
+    </p>
 
-    <div class="cta-row">
-      <a href="#" class="btn btn-primary" data-open-ai>Try AI Service Recommender</a>
-      <a class="btn" href="#contact">Talk about your use case</a>
+    <select id="aiGoal" class="ai-select">
+      <option value="">Select your goal</option>
+      <option value="bi">Improve reporting & KPIs</option>
+      <option value="growth">Generate more qualified leads</option>
+      <option value="seo">Improve SEO & website traffic</option>
+      <option value="automation">Automate follow-ups & workflows</option>
+    </select>
+
+    <button class="btn btn-primary" id="aiGenerate">
+      Generate AI Action Plan
+    </button>
+
+    <!-- STEP 2 OUTPUT AREA -->
+    <div id="aiOutput" class="ai-chat">
+      <div class="ai-message ai-placeholder">
+        Select your goal and click “Generate AI Action Plan”.
+      </div>
     </div>
   </div>
 </section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <!-- SERVICES -->
 <section class="section" id="services">
   <div class="section-head">
     <div>
@@ -322,6 +328,7 @@
 <a class="ai-float" href="#ai">✨ AI</a>
 </body>
 </html>
+
 
 
 
