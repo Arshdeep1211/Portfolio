@@ -238,3 +238,88 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+/* =========================
+   AI SECTION (inline version)
+   ========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const generateBtn = document.getElementById("aiGenerate");
+  const goalSelect = document.getElementById("aiGoal");
+  const output = document.getElementById("aiOutput");
+
+  if (!generateBtn || !goalSelect || !output) return;
+
+  generateBtn.addEventListener("click", () => {
+
+    const goal = goalSelect.value;
+
+    if (!goal) {
+      output.innerHTML = `
+        <div class="ai-message">
+          Please select a goal first.
+        </div>
+      `;
+      return;
+    }
+
+    let response = "";
+
+    if (goal === "bi") {
+      response = `
+        <div class="ai-message">
+          <strong>AI Recommendation: KPI & Reporting Optimization</strong>
+          <ul>
+            <li>Define 5 core KPIs tied directly to revenue</li>
+            <li>Build weekly dashboard in Sheets/Excel</li>
+            <li>Automate reporting summary using AI prompts</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    if (goal === "growth") {
+      response = `
+        <div class="ai-message">
+          <strong>AI Recommendation: Lead Generation System</strong>
+          <ul>
+            <li>Refine ICP & positioning</li>
+            <li>Create LinkedIn outbound workflow</li>
+            <li>Install simple CRM funnel tracking</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    if (goal === "seo") {
+      response = `
+        <div class="ai-message">
+          <strong>AI Recommendation: SEO Upgrade Plan</strong>
+          <ul>
+            <li>Keyword mapping for 5 landing pages</li>
+            <li>Optimize titles & meta descriptions</li>
+            <li>Add internal linking structure</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    if (goal === "automation") {
+      response = `
+        <div class="ai-message">
+          <strong>AI Recommendation: Workflow Automation</strong>
+          <ul>
+            <li>Automate email follow-ups</li>
+            <li>Create AI content repurposing flow</li>
+            <li>Use templates to reduce manual effort</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    output.innerHTML = response;
+
+  });
+
+});
