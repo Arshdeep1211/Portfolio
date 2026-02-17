@@ -767,4 +767,86 @@ body.lb-lock{
 .img-card img{
   cursor: zoom-in;
 }
+/* =========================
+   AI Recommender Modal
+   ========================= */
+.ai-modal { max-width: 720px; }
+.ai-content { margin-top: 8px; }
+.ai-title{
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.ai-accent{ color: var(--accent2); }
+
+.ai-options{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.ai-option{
+  text-align:left;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--text2);
+  cursor:pointer;
+  font-weight: 650;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.ai-option:hover{
+  transform: translateY(-1px);
+  border-color: rgba(124,92,255,.35);
+  background: rgba(255,255,255,.08);
+}
+.ai-option.selected{
+  border-color: rgba(46,224,201,.55);
+  box-shadow: 0 0 0 3px rgba(46,224,201,.12);
+  color: var(--text);
+}
+
+.ai-why{
+  color: var(--text2);
+  margin: 6px 0 12px;
+  font-size: 15px;
+}
+
+.ai-card{
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  padding: 12px;
+  margin-top: 10px;
+}
+.ai-card-title{
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.ai-bullets{
+  padding-left: 18px;
+  color: var(--text2);
+}
+.ai-bullets li{ margin-bottom: 7px; }
+
+.ai-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.ai-footer{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+}
+
 
