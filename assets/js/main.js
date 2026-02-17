@@ -205,3 +205,91 @@ if (lightbox) {
     }
   });
 }
+/* =========================
+   AI SECTION: loading + transition
+   ========================= */
+const aiSelect = document.getElementById("aiSelect");
+const aiBtn = document.getElementById("aiBtn");
+const aiResult = document.getElementById("aiResult");
+
+if (aiSelect && aiBtn && aiResult) {
+  const responses = {
+    bi: `
+      <div class="block-title">Business Intelligence</div>
+      <ul class="bullets">
+        <li>Define KPI hierarchy (north-star → supporting metrics).</li>
+        <li>Build a dashboard + automated weekly insights summary.</li>
+        <li>Track conversion, retention, CAC/LTV where relevant.</li>
+      </ul>
+      <div class="small">Next: tell me your data sources (Sheets/CRM/DB) + key decisions.</div>
+    `,
+    seo: `
+      <div class="block-title">SEO & Website Optimization</div>
+      <ul class="bullets">
+        <li>Technical SEO: titles, headings, speed, mobile, schema basics.</li>
+        <li>Create 5–10 service pages around intent keywords.</li>
+        <li>Set tracking + monthly iterations (Search Console + Analytics).</li>
+      </ul>
+      <div class="small">Next: I can run a quick audit and give a priority checklist.</div>
+    `,
+    social: `
+      <div class="block-title">Social Media Marketing</div>
+      <ul class="bullets">
+        <li>Content pillars + 4-week calendar + post templates.</li>
+        <li>Multi-channel plan (LinkedIn / IG / X) based on audience.</li>
+        <li>Light analytics loop: what worked → improve weekly.</li>
+      </ul>
+      <div class="small">Next: pick channels + frequency (2–5 posts/week).</div>
+    `,
+    sales: `
+      <div class="block-title">Sales Channel Development</div>
+      <ul class="bullets">
+        <li>Define ICP + offer + pricing anchor.</li>
+        <li>Outreach funnel: list → message → call → proposal → follow-up.</li>
+        <li>Set targets: leads/week, conversion %, cycle time.</li>
+      </ul>
+      <div class="small">Next: I’ll draft scripts + a simple CRM pipeline.</div>
+    `,
+    gtm: `
+      <div class="block-title">Go-to-Market Strategy</div>
+      <ul class="bullets">
+        <li>Choose one beachhead segment and early adopter profile.</li>
+        <li>Positioning + messaging tied to buying triggers.</li>
+        <li>90-day rollout plan with milestones and KPIs.</li>
+      </ul>
+      <div class="small">Next: we align on the 1 decision you need in 2–4 weeks.</div>
+    `
+  };
+
+  const setResultHTML = (html) => {
+    const inner = aiResult.querySelector(".ai-result-inner");
+    if (inner) inner.innerHTML = html;
+    else aiResult.innerHTML = `<div class="ai-result-inner">${html}</div>`;
+  };
+
+  aiBtn.addEventListener("click", async () => {
+    const key = aiSelect.value;
+
+    // show loading
+    aiBtn.classList.add("is-loading");
+    aiBtn.setAttribute("aria-busy", "true");
+    aiResult.classList.add("is-loading");
+    aiResult.classList.add("fade-out");
+
+    // polished delay (feels interactive)
+    await new Promise((r) => setTimeout(r, 650));
+
+    setResultHTML(responses[key] || "Select an option to see a recommendation.");
+
+    // reveal result
+    aiResult.classList.remove("fade-out");
+    aiResult.classList.remove("is-loading");
+    aiBtn.classList.remove("is-loading");
+    aiBtn.setAttribute("aria-busy", "false");
+
+    // optional: auto-scroll on mobile so user sees output
+    if (window.innerWidth <= 560) {
+      aiResult.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+}
