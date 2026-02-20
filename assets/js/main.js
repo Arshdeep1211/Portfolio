@@ -295,7 +295,7 @@ if (aiSelect && aiBtn && aiResult) {
 }
 
 // =========================
-// AI CALL (Cloudflare Worker)
+// // AI CALL (Cloudflare Worker)
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("ai-btn");
@@ -308,16 +308,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const API_URL = "https://arshdeep-assistant.arshdeep-engg.workers.dev/api/ai";
 
+  // ---- helpers ----
+  const escapeHtml = (s) =>
+    String(s)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  // very small "markdown-ish" formatter (enough for your output)
+  const formatAiTextToHtml = (raw) => {
+    let text = escapeHtml(raw || "").trim();
+    if (!text) return "<p>No response.</p>";
+
+    // Headings like: **Title** or ## Title
+    text = text.replace(/^##\s*(.+)$/gm, "<h4>$1</h4>");
+    text = text.replace(/^\*\*(.+?)\*\*\s*$/gm, "<h4>$1</h4>");
+
+    // Bold inline
+    text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+    // Numbered lists: "1. item"
+    text = text.replace(/^\d+\.\s+(.+)$/gm, "<li>$1</li>");
+    text = text.replace(/(<li>.*<\/li>\s*)+/g, (m) => `<ol>${m}</ol>`);
+
+    // Bullet lists: "- item" or "* item"
+    text = text.replace(/^[\-\*]\s+(.+)$/gm, "<li>$1</li>");
+    text = text.replace(/(<li>.*<\/li>\s*)+/g, (m) => {
+      // if it's already inside <ol>, don't wrap again
+      if (m.includes("<ol>") || m.includes("</ol>")) return m;
+      return `<ul>${m}</ul>`;
+    });
+
+    // Paragraphs: split by blank lines
+    const blocks = text
+      .split(/\n\s*\n/g)
+      .map((b) => b.trim())
+      .filter(Boolean)
+      .map((b) => {
+        // keep lists/headings as-is
+        if (b.startsWith("<ul>") || b.startsWith("<ol>") || b.startsWith("<h4>")) return b;
+        // line breaks inside paragraph
+        return `<p>${b.replace(/\n/g, "<br>")}</p>`;
+      });
+
+    return blocks.join("\n");
+  };
+
+  // (Optional) detect language later if you add a toggle
+  const getLang = () => "en"; // change to "de" if you add a language switch
+
   btn.addEventListener("click", async () => {
     const mode = modeEl.value;
     const prompt = (promptEl.value || "").trim();
 
     if (!prompt) {
       resultEl.innerHTML = "<p>Please write a prompt first.</p>";
+      resultEl.classList.add("show");
       return;
     }
 
-    // UI: loading state
+    // UI: loading
     btn.disabled = true;
     statusEl.style.display = "block";
     statusEl.textContent = "Thinking…";
@@ -328,18 +380,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, mode, lang: "en" }),
+        body: JSON.stringify({ prompt, mode, lang: getLang() }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
       if (!res.ok || !data.ok) {
-        throw new Error(data?.error || "Something went wrong");
+        throw new Error(data?.error || `Request failed (${res.status})`);
       }
 
-      // UI: smooth reveal
       statusEl.textContent = "Done ✅";
-      resultEl.innerHTML = `<pre>${data.text}</pre>`;
+
+      // ✅ formatted output instead of raw <pre>
+      resultEl.innerHTML = formatAiTextToHtml(data.text);
       resultEl.classList.add("show");
 
       setTimeout(() => {
@@ -348,59 +401,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (err) {
       statusEl.textContent = "Error ❌";
-      resultEl.innerHTML = `<p>${err.message}</p>`;
+      resultEl.innerHTML = `<p>${escapeHtml(err.message || "Something went wrong.")}</p>`;
       resultEl.classList.add("show");
     } finally {
       btn.disabled = false;
     }
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("ai-btn");
-  const modeEl = document.getElementById("ai-mode");
-  const promptEl = document.getElementById("ai-prompt");
-  const resultEl = document.getElementById("ai-result");
-  const statusEl = document.getElementById("ai-status");
-
-  if (!btn) return;
-
-  const API_URL = "https://arshdeep-assistant.arshdeep-engg.workers.dev/api/ai";
-
-  btn.addEventListener("click", async () => {
-    const mode = modeEl.value;
-    const prompt = promptEl.value.trim();
-
-    if (!prompt) {
-      resultEl.innerHTML = "<p>Please write something first.</p>";
-      resultEl.classList.add("show");
-      return;
-    }
-
-    btn.disabled = true;
-    statusEl.style.display = "block";
-    resultEl.innerHTML = "";
-
-    try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          prompt,
-          mode,
-          lang: "en"
-        })
-      });
-
-      const data = await res.json();
-
-      resultEl.innerHTML = `<pre>${data.text}</pre>`;
-      resultEl.classList.add("show");
-
-    } catch (err) {
-      resultEl.innerHTML = "<p>Something went wrong.</p>";
-    }
-
-    statusEl.style.display = "none";
-    btn.disabled = false;
   });
 });
