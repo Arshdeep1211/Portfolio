@@ -293,3 +293,65 @@ if (aiSelect && aiBtn && aiResult) {
     }
   });
 }
+
+// =========================
+// AI CALL (Cloudflare Worker)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("ai-btn");
+  const modeEl = document.getElementById("ai-mode");
+  const promptEl = document.getElementById("ai-prompt");
+  const resultEl = document.getElementById("ai-result");
+  const statusEl = document.getElementById("ai-status");
+
+  if (!btn || !modeEl || !promptEl || !resultEl || !statusEl) return;
+
+  const API_URL = "https://arshdeep-assistant.arshdeep-engg.workers.dev/api/ai";
+
+  btn.addEventListener("click", async () => {
+    const mode = modeEl.value;
+    const prompt = (promptEl.value || "").trim();
+
+    if (!prompt) {
+      resultEl.innerHTML = "<p>Please write a prompt first.</p>";
+      return;
+    }
+
+    // UI: loading state
+    btn.disabled = true;
+    statusEl.style.display = "block";
+    statusEl.textContent = "Thinking…";
+    resultEl.classList.remove("show");
+    resultEl.innerHTML = "";
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt, mode, lang: "en" }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data?.error || "Something went wrong");
+      }
+
+      // UI: smooth reveal
+      statusEl.textContent = "Done ✅";
+      resultEl.innerHTML = `<pre>${data.text}</pre>`;
+      resultEl.classList.add("show");
+
+      setTimeout(() => {
+        statusEl.style.display = "none";
+      }, 900);
+
+    } catch (err) {
+      statusEl.textContent = "Error ❌";
+      resultEl.innerHTML = `<p>${err.message}</p>`;
+      resultEl.classList.add("show");
+    } finally {
+      btn.disabled = false;
+    }
+  });
+});
