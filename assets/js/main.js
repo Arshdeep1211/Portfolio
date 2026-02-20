@@ -355,3 +355,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("ai-btn");
+  const modeEl = document.getElementById("ai-mode");
+  const promptEl = document.getElementById("ai-prompt");
+  const resultEl = document.getElementById("ai-result");
+  const statusEl = document.getElementById("ai-status");
+
+  if (!btn) return;
+
+  const API_URL = "https://arshdeep-assistant.arshdeep-engg.workers.dev/api/ai";
+
+  btn.addEventListener("click", async () => {
+    const mode = modeEl.value;
+    const prompt = promptEl.value.trim();
+
+    if (!prompt) {
+      resultEl.innerHTML = "<p>Please write something first.</p>";
+      resultEl.classList.add("show");
+      return;
+    }
+
+    btn.disabled = true;
+    statusEl.style.display = "block";
+    resultEl.innerHTML = "";
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prompt,
+          mode,
+          lang: "en"
+        })
+      });
+
+      const data = await res.json();
+
+      resultEl.innerHTML = `<pre>${data.text}</pre>`;
+      resultEl.classList.add("show");
+
+    } catch (err) {
+      resultEl.innerHTML = "<p>Something went wrong.</p>";
+    }
+
+    statusEl.style.display = "none";
+    btn.disabled = false;
+  });
+});
