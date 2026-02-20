@@ -131,53 +131,43 @@
     
 </section>
 
-<!-- AI SECTION (ADD THIS WHOLE BLOCK) -->
-<section class="section" id="ai">
+<!-- AI SECTION >
+    <section class="section" id="ai">
   <div class="section-head">
     <div>
       <div class="section-title">Strategy Copilot (AI)</div>
+      <div class="section-subtitle">
+        Practical AI that improves marketing performance and removes manual work.
+      </div>
     </div>
   </div>
 
-  <div class="ai-card">
-    <p class="lead">
-      Practical AI that improves marketing performance and removes manual work —
-      no buzzwords, just measurable impact.
-    </p>
+  <div class="ai-box">
 
- <select id="aiSelect" class="ai-select">
-  <option value="bi">Business Intelligence (Dashboards & KPIs)</option>
-  <option value="seo">SEO & Website Optimization</option>
-  <option value="social">Social Media Marketing (Multi-channel)</option>
-  <option value="sales">Sales Channel Development</option>
-  <option value="gtm">Go-to-Market Strategy</option>
-</select>
+    <!-- Dropdown 1 -->
+    <select id="ai-mode" class="ai-select">
+      <option value="marketing">Social Media Marketing (Multi-channel)</option>
+      <option value="seo">SEO / Website Optimization</option>
+      <option value="bi">Business Intelligence</option>
+      <option value="sales">Sales Messaging</option>
+      <option value="website">Website Improvements</option>
+    </select>
 
-    <button class="btn btn-primary" id="aiGenerate">
+    <!-- Text Input -->
+    <textarea id="ai-prompt" class="ai-input" rows="3"
+      placeholder="Write what you want… e.g. Create a LinkedIn post about AI in Business Intelligence">
+    </textarea>
+
+    <!-- IMPORTANT: type="button" -->
+    <button id="ai-btn" type="button" class="btn btn-primary">
       Generate AI Action Plan
     </button>
 
-    <!-- STEP 2 OUTPUT AREA -->
-    <div class="ai-box">
-  <label class="ai-label" for="ai-mode">Choose what you need</label>
+    <div id="ai-status" class="ai-status" style="display:none;">Thinking…</div>
+    <div id="ai-result" class="ai-result"></div>
 
-  <select id="ai-mode" class="ai-select">
-    <option value="bi">BI / Dashboard ideas</option>
-    <option value="marketing">Marketing (LinkedIn / Ads)</option>
-    <option value="seo">SEO suggestions</option>
-    <option value="sales">Sales messaging</option>
-    <option value="website">Website improvements</option>
-  </select>
-
-  <textarea id="ai-prompt" class="ai-input" rows="3"
-    placeholder="Write what you want… e.g., 'Create a LinkedIn post about AI in Business Intelligence'"></textarea>
-
-  <button id="ai-btn" class="btn btn-primary">Generate</button>
-
-  <div id="ai-status" class="ai-status" style="display:none;">Thinking…</div>
-
-  <div id="ai-result" class="ai-result"></div>
-</div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section class="section" id="services">
@@ -340,6 +330,7 @@
 <a class="ai-float" href="#ai">✨ AI</a>
 </body>
 </html>
+
 
 
 
